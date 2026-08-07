@@ -3,7 +3,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 
-const easePremium = [0.76, 0, 0.24, 1]; // Custom brutalist ease
+const easePremium: [number, number, number, number] = [0.76, 0, 0.24, 1]; // Custom brutalist ease
 
 // --- PHASE ROW COMPONENT (Protocolo) ---
 function PhaseRow({ phase, index }: { phase: { id: string, title: string, desc: string }, index: number }) {
@@ -29,7 +29,7 @@ function PhaseRow({ phase, index }: { phase: { id: string, title: string, desc: 
 
 // --- PRELOADER COMPONENT ---
 function IntroPreloader({ onComplete }: { onComplete: () => void }) {
-  const easeDelicate = [0.22, 1, 0.36, 1]; // Premium, very soft glide
+  const easeDelicate: [number, number, number, number] = [0.22, 1, 0.36, 1]; // Premium, very soft glide
 
   React.useEffect(() => {
     const timer = setTimeout(() => {
@@ -91,7 +91,7 @@ function ProgressBar() {
 
 // --- CONTACT MODAL COMPONENT ---
 function ContactModal({ isOpen, onClose }: { isOpen: boolean, onClose: () => void }) {
-  const easePremium = [0.22, 1, 0.36, 1];
+  const easePremium: [number, number, number, number] = [0.22, 1, 0.36, 1];
   
   const [status, setStatus] = useState<"idle"|"loading"|"success"|"error">("idle");
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
