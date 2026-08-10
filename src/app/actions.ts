@@ -5,8 +5,7 @@ export async function submitContactForm(formData: FormData) {
   const webhookUrl = process.env.MAKE_WEBHOOK_URL;
 
   if (!webhookUrl) {
-    console.error("MAKE_WEBHOOK_URL no está configurada en el entorno.");
-    return { success: false, error: "Error de configuration del servidor." };
+    return { success: false, error: "MAKE_WEBHOOK_URL no está configurada en las Variables de Entorno de Vercel (Production)." };
   }
 
   try {
@@ -19,13 +18,12 @@ export async function submitContactForm(formData: FormData) {
     });
 
     if (!response.ok) {
-      console.error(`Webhook devolvió error: ${response.status}`);
-      return { success: false, error: "Error al enviar la solicitud." };
+      const text = await response.text();
+      return { success: false, error: `Webhook devolvió HTTP ${response.status}: ${text}` };
     }
 
     return { success: true };
-  } catch (error) {
-    console.error('Error al procesar el formulario:', error);
-    return { success: false, error: "Error interno del servidor." };
+  } catch (error: any) {
+    return { success: false, error: `Excepción interna: ${error.message || String(error)}` };
   }
 }

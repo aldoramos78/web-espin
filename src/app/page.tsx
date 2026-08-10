@@ -107,9 +107,11 @@ function ContactModal({ isOpen, onClose }: { isOpen: boolean, onClose: () => voi
       if (res.success) {
         setStatus("success");
       } else {
+        alert("ERROR DEL SERVIDOR: " + res.error);
         setStatus("error");
       }
-    } catch (err) {
+    } catch (err: any) {
+      alert("ERROR CLIENTE: " + err.message);
       setStatus("error");
     }
   };
