@@ -101,6 +101,13 @@ function ContactModal({ isOpen, onClose }: { isOpen: boolean, onClose: () => voi
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData.entries());
 
+    // Sanitizar URL para evitar errores de validación estricta de Notion API
+    if (!data.url || (typeof data.url === 'string' && data.url.trim() === '')) {
+      delete data.url;
+    } else if (typeof data.url === 'string' && !data.url.startsWith('http')) {
+      data.url = `https://${data.url.trim()}`;
+    }
+
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
