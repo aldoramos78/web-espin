@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { submitContactForm } from "./actions";
 
 const easePremium: [number, number, number, number] = [0.76, 0, 0.24, 1]; // Custom brutalist ease
 
@@ -99,16 +100,11 @@ function ContactModal({ isOpen, onClose }: { isOpen: boolean, onClose: () => voi
     setStatus("loading");
     
     const formData = new FormData(e.currentTarget);
-    const data = Object.fromEntries(formData.entries());
 
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
+      const res = await submitContactForm(formData);
 
-      if (res.ok) {
+      if (res.success) {
         setStatus("success");
       } else {
         setStatus("error");
