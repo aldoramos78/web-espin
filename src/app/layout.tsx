@@ -14,8 +14,36 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://espinlabs.com"),
   title: "espín | alta costura tecnológica.",
-  description: "Auditamos y reconstruimos infraestructuras obsoletas.",
+  description: "Auditamos y reconstruimos infraestructuras obsoletas. Transformamos negocios que pierden dinero en ecosistemas digitales de alto rendimiento.",
+  keywords: ["auditoría técnica", "arquitectura de software", "automatización IA", "deuda técnica", "desarrollo a medida", "espin labs"],
+  authors: [{ name: "Espín Labs" }],
+  creator: "Espín Labs",
+  openGraph: {
+    type: "website",
+    locale: "es_ES",
+    url: "https://espinlabs.com",
+    title: "espín | alta costura tecnológica.",
+    description: "Transformamos infraestructuras obsoletas en ecosistemas de alto rendimiento.",
+    siteName: "Espín Labs",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "espín | alta costura tecnológica.",
+    description: "Transformamos infraestructuras obsoletas en ecosistemas de alto rendimiento.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export default function RootLayout({
