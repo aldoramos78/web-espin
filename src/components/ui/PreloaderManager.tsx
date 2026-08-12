@@ -5,7 +5,16 @@ import { IntroPreloader } from "./IntroPreloader";
 import { ProgressBar } from "./ProgressBar";
 
 export function PreloaderManager() {
-  const [showPreloader, setShowPreloader] = useState(true);
+  const [showPreloader, setShowPreloader] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+  
+  useEffect(() => {
+    setIsMounted(true);
+    const hasSeen = sessionStorage.getItem("hasSeenPreloader");
+    if (!hasSeen) {
+      setShowPreloader(true);
+    }
+  }, []);
   
   useEffect(() => {
     // We add a specific class to body to prevent scrolling while preloader is active
@@ -16,10 +25,17 @@ export function PreloaderManager() {
     }
   }, [showPreloader]);
 
+  const handleComplete = () => {
+    setShowPreloader(false);
+    sessionStorage.setItem("hasSeenPreloader", "true");
+  };
+
+  if (!isMounted) return null;
+
   return (
     <>
       <AnimatePresence>
-        {showPreloader && <IntroPreloader onComplete={() => setShowPreloader(false)} />}
+        {showPreloader && <IntroPreloader onComplete={handleComplete} />}
       </AnimatePresence>
       {!showPreloader && <ProgressBar />}
     </>

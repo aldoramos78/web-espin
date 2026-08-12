@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { HeroBackground } from "@/components/ui/HeroBackground";
 import { PhaseRow } from "@/components/ui/PhaseRow";
 import { HeaderAndModal } from "@/components/ui/HeaderAndModal";
@@ -416,13 +417,13 @@ export default function EspinLanding() {
               <div className="flex flex-col border-t border-zinc-900">
                 {[
                   { name: 'Aviso Legal', path: '/aviso-legal' },
-                  { name: 'Privacidad', path: '#' },
-                  { name: 'Cookies', path: '#' }
+                  { name: 'Privacidad', path: '/politica-de-privacidad' },
+                  { name: 'Cookies', path: '/politica-de-cookies' }
                 ].map((item) => (
-                  <a key={item.name} href={item.path} className="group flex justify-between items-center py-4 md:py-6 border-b border-zinc-900 transition-colors">
-                    <span className="text-[9px] md:text-sm tracking-[0.1em] md:tracking-[0.2em] text-zinc-400 group-hover:text-white transition-colors uppercase">{item.name}</span>
-                    <span className="text-zinc-800 group-hover:text-[#F5B700] transition-colors transform group-hover:-translate-y-1 group-hover:translate-x-1 duration-300 text-sm md:text-lg">↗</span>
-                  </a>
+                  <Link key={item.name} href={item.path} className="group flex justify-between items-center py-4 md:py-6 border-b border-zinc-900 transition-all duration-300 hover:border-zinc-800 cursor-pointer">
+                    <span className="text-zinc-500 font-light group-hover:text-[#F5B700] group-hover:scale-[1.02] transform transition-all duration-300 origin-left uppercase text-[9px] md:text-sm tracking-[0.1em] md:tracking-[0.2em]">{item.name}</span>
+                    <span className="text-zinc-600 group-hover:text-[#F5B700] transition-colors duration-300 text-sm md:text-lg transform group-hover:-translate-y-1 group-hover:translate-x-1">↗</span>
+                  </Link>
                 ))}
               </div>
             </div>
