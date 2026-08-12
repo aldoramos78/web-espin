@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function AvisoLegal() {
   return (
-    <LegalModalLayout title="Protocolo Legal">
+    <LegalModalLayout title="Aviso Legal">
       <h1 className="font-michroma text-2xl md:text-4xl text-[#F5B700] uppercase tracking-tighter mb-12 relative z-10">
         AVISO LEGAL Y CONDICIONES DE USO
       </h1>

@@ -28,11 +28,21 @@ export function SmartHeader({ onContactClick }: { onContactClick: () => void }) 
   }, []);
 
   const navLinks = [
-    { label: "Diagnóstico", href: "#dolor" },
+    { label: "Diagnóstico", href: "#diagnostico" },
     { label: "Protocolo", href: "#protocolo" },
     { label: "Pilares", href: "#pilares" },
-    { label: "Resultados", href: "#casos" },
+    { label: "Resultados", href: "#resultados" },
   ];
+
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const id = href.replace('#', '');
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsMobileMenuOpen(false);
+  };
 
   return (
     <>
