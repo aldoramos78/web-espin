@@ -49,7 +49,7 @@ export function SmartHeader({ onContactClick }: { onContactClick: () => void }) 
           {/* Logo */}
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.5, ease: easePremium }} className="flex justify-start">
             <a href="#" aria-label="espín" className="flex items-center text-white hover:text-zinc-300 transition-colors">
-              <svg className="h-6 md:h-8 w-auto" viewBox="0 0 1606 564" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg className="h-10 md:h-10 w-auto" viewBox="0 0 1606 564" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1277.06 469.262V188.012H1323.94V225.365C1330.94 215.925 1339.56 208.031 1349.82 201.684C1360.23 195.336 1374.07 190.616 1391.32 187.523C1408.74 184.268 1431.52 182.641 1459.68 182.641C1496.46 182.641 1525.43 186.221 1546.59 193.383C1567.92 200.544 1583.05 213.321 1592 231.713C1600.96 250.105 1605.43 276.146 1605.43 309.838V469.262H1558.31V309.838C1558.31 290.632 1556.68 275.17 1553.43 263.451C1550.17 251.732 1544.56 242.862 1536.58 236.84C1528.77 230.818 1517.95 226.83 1504.11 224.877C1490.28 222.761 1472.7 221.703 1451.38 221.703C1418.83 221.703 1393.27 224.389 1374.72 229.76C1356.16 235.131 1343.06 243.594 1335.41 255.15C1327.76 266.544 1323.94 281.436 1323.94 299.828V469.262H1277.06Z" fill="currentColor"/>
                 <path d="M1170.71 469.262V203.637H1217.59V469.262H1170.71ZM1139.46 141.625L1123.84 118.188L1264.46 1L1293.27 42.9922L1139.46 141.625Z" fill="currentColor"/>
                 <path d="M1138.77 142L1123 118.333L1264.93 0L1294 42.4028L1138.77 142Z" fill="#F5B700"/>
@@ -121,18 +121,6 @@ export function SmartHeader({ onContactClick }: { onContactClick: () => void }) 
                     </div>
                   </a>
               ))}
-              <a 
-                href="#contacto" 
-                onClick={(e) => { e.preventDefault(); setIsMobileMenuOpen(false); onContactClick(); }}
-                className="group block py-6 md:py-10 border-y border-zinc-800 transition-colors"
-              >
-                <div className="flex flex-row items-baseline gap-4 md:gap-10 transform group-hover:translate-x-3 md:group-hover:translate-x-6 transition-transform duration-300 ease-out">
-                  <span className="font-space-mono text-sm md:text-xl text-[#F5B700]">05</span>
-                  <span className="font-michroma font-bold uppercase text-[#F5B700] group-hover:text-white transition-colors duration-300" style={{ fontSize: 'clamp(1.8rem, 6vw, 6rem)', lineHeight: 1 }}>
-                    Contacto
-                  </span>
-                </div>
-              </a>
             </div>
           </motion.div>
         )}

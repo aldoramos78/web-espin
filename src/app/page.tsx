@@ -140,7 +140,7 @@ export default function EspinLanding() {
                       {p.title}
                     </h3>
                     
-                    <p className="font-inter font-light text-zinc-500 leading-relaxed mt-4 text-sm md:text-sm lg:text-base xl:text-lg group-hover:text-black transition-colors duration-700 relative z-10">
+                    <p className="font-inter font-light text-zinc-400 leading-relaxed mt-4 text-base md:text-lg lg:text-xl group-hover:text-black transition-colors duration-700 relative z-10">
                       {p.desc}
                     </p>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
@@ -220,7 +220,7 @@ export default function EspinLanding() {
                       {p.title}
                     </h3>
                     
-                    <p className="font-inter font-light leading-relaxed mt-4 text-sm md:text-sm lg:text-base xl:text-lg transition-colors duration-700 relative z-10 text-zinc-500 group-hover:text-black">
+                    <p className="font-inter font-light leading-relaxed mt-4 text-base md:text-lg lg:text-xl transition-colors duration-700 relative z-10 text-zinc-400 group-hover:text-black">
                       {p.desc}
                     </p>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
@@ -421,8 +421,8 @@ export default function EspinLanding() {
                   { name: 'Cookies', path: '/politica-de-cookies' }
                 ].map((item) => (
                   <Link key={item.name} href={item.path} className="group flex justify-between items-center py-4 md:py-6 border-b border-zinc-900 transition-all duration-300 hover:border-zinc-800 cursor-pointer">
-                    <span className="text-zinc-500 font-light group-hover:text-[#F5B700] group-hover:scale-[1.02] transform transition-all duration-300 origin-left uppercase text-[9px] md:text-sm tracking-[0.1em] md:tracking-[0.2em]">{item.name}</span>
-                    <span className="text-zinc-600 group-hover:text-[#F5B700] transition-colors duration-300 text-sm md:text-lg transform group-hover:-translate-y-1 group-hover:translate-x-1">↗</span>
+                    <span className="text-white font-normal group-hover:text-[#F5B700] group-hover:scale-[1.02] transform transition-all duration-300 origin-left uppercase text-xs md:text-sm tracking-[0.15em] md:tracking-[0.2em]">{item.name}</span>
+                    <span className="text-zinc-500 group-hover:text-[#F5B700] transition-colors duration-300 text-base md:text-lg transform group-hover:-translate-y-1 group-hover:translate-x-1">↗</span>
                   </Link>
                 ))}
               </div>

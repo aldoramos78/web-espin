@@ -14,11 +14,7 @@ export function LegalModalLayout({ children, title }: { children: React.ReactNod
   }, []);
 
   const handleClose = () => {
-    if (window.history.length > 2) {
-      router.back();
-    } else {
-      router.push("/");
-    }
+    router.push("/", { scroll: false });
   };
 
   return (
@@ -41,13 +37,14 @@ export function LegalModalLayout({ children, title }: { children: React.ReactNod
             </span>
           </div>
           <button 
-            onClick={handleClose} 
-            className="group flex items-center gap-2 hover:text-[#F5B700] transition-colors cursor-pointer"
+            onClick={handleClose}
+            className="p-4 -mr-4 group transition-transform duration-500 hover:rotate-90 z-10"
+            aria-label="Cerrar modal"
           >
-            <span className="text-xs font-space-mono tracking-widest uppercase text-zinc-500 group-hover:text-[#F5B700] transition-colors">Cerrar</span>
-            <svg className="w-5 h-5 text-zinc-500 group-hover:text-[#F5B700] transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
+            <div className="relative w-6 h-6">
+              <span className="absolute top-1/2 left-0 w-6 h-[1px] bg-zinc-500 group-hover:bg-[#F5B700] rotate-45 transition-colors duration-300"></span>
+              <span className="absolute top-1/2 left-0 w-6 h-[1px] bg-zinc-500 group-hover:bg-[#F5B700] -rotate-45 transition-colors duration-300"></span>
+            </div>
           </button>
         </div>
 

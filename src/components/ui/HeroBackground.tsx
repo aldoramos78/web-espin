@@ -137,28 +137,32 @@ export function HeroBackground() {
                  <circle cx="calc(70% - 50px)" cy="22%" r="4" fill="currentColor"/>
 
                  {/* Box 2: Bottom Middle (DB Schema - under ecosistemas) */}
-                 <rect x="42%" y="60%" width="260" height="220" fill="rgba(0,0,0,0.5)" stroke="rgba(255,255,255,0.3)"/>
-                 <line x1="42%" y1="66%" x2="calc(42% + 260px)" y2="66%" stroke="rgba(255,255,255,0.3)"/>
-                 <text x="44%" y="64%" fill="#F5B700" stroke="none" className="text-xs font-bold font-michroma">CORE_LEDGER_DB</text>
-                 <text x="44%" y="71%" fill="currentColor" stroke="none">id: UUID (PK)</text>
-                 <text x="44%" y="74%" fill="currentColor" stroke="none">client_ref: VARCHAR(255)</text>
-                 <text x="44%" y="77%" fill="currentColor" stroke="none">obsolescence_score: FLOAT</text>
-                 <text x="44%" y="80%" fill="currentColor" stroke="none">architectural_debt: JSONB</text>
-                 <text x="44%" y="83%" fill="currentColor" stroke="none">status: ENUM('CRITICAL', 'OPTIMIZED')</text>
-                 <text x="44%" y="86%" fill="currentColor" stroke="none">created_at: TIMESTAMPZ</text>
-                 <path d="M 42% 70% H 35% V 50%" stroke="rgba(245,183,0,0.5)" strokeWidth="2" />
-                 <circle cx="35%" cy="50%" r="4" fill="#F5B700" stroke="none"/>
+                 <g className="hidden md:block">
+                   <rect x="42%" y="60%" width="260" height="220" fill="rgba(0,0,0,0.5)" stroke="rgba(255,255,255,0.3)"/>
+                   <line x1="42%" y1="66%" x2="calc(42% + 260px)" y2="66%" stroke="rgba(255,255,255,0.3)"/>
+                   <text x="44%" y="64%" fill="#F5B700" stroke="none" className="text-xs font-bold font-michroma">CORE_LEDGER_DB</text>
+                   <text x="44%" y="71%" fill="currentColor" stroke="none">id: UUID (PK)</text>
+                   <text x="44%" y="74%" fill="currentColor" stroke="none">client_ref: VARCHAR(255)</text>
+                   <text x="44%" y="77%" fill="currentColor" stroke="none">obsolescence_score: FLOAT</text>
+                   <text x="44%" y="80%" fill="currentColor" stroke="none">architectural_debt: JSONB</text>
+                   <text x="44%" y="83%" fill="currentColor" stroke="none">status: ENUM('CRITICAL', 'OPTIMIZED')</text>
+                   <text x="44%" y="86%" fill="currentColor" stroke="none">created_at: TIMESTAMPZ</text>
+                   <path d="M 42% 70% H 35% V 50%" stroke="rgba(245,183,0,0.5)" strokeWidth="2" />
+                   <circle cx="35%" cy="50%" r="4" fill="#F5B700" stroke="none"/>
+                 </g>
 
                  {/* Box 3: Bottom Right (Code Snippet) */}
-                 <rect x="75%" y="70%" width="340" height="160" rx="4" fill="rgba(0,0,0,0.8)" stroke="rgba(255,255,255,0.1)"/>
-                 <text x="77%" y="74%" fill="#F5B700" stroke="none">{'async function executeDemolition(targetId) {'}</text>
-                 <text x="79%" y="77%" fill="currentColor" stroke="none">{'  const debt = await getTechnicalDebt(targetId);'}</text>
-                 <text x="79%" y="80%" fill="currentColor" stroke="none">{'  if (debt.isCritical) {'}</text>
-                 <text x="81%" y="83%" fill="rgba(255,255,255,0.8)" stroke="none">{'    await purgeLegacySystems(targetId);'}</text>
-                 <text x="81%" y="86%" fill="rgba(255,255,255,0.8)" stroke="none">{'    await deployModernArchitecture(targetId);'}</text>
-                 <text x="79%" y="89%" fill="currentColor" stroke="none">{'  }'}</text>
-                 <text x="79%" y="92%" fill="currentColor" stroke="none">{'  return status.OPTIMIZED;'}</text>
-                 <text x="77%" y="95%" fill="#F5B700" stroke="none">{'}'}</text>
+                 <g className="hidden md:block">
+                   <rect x="75%" y="70%" width="340" height="160" rx="4" fill="rgba(0,0,0,0.8)" stroke="rgba(255,255,255,0.1)"/>
+                   <text x="77%" y="74%" fill="#F5B700" stroke="none">{'async function executeDemolition(targetId) {'}</text>
+                   <text x="79%" y="77%" fill="currentColor" stroke="none">{'  const debt = await getTechnicalDebt(targetId);'}</text>
+                   <text x="79%" y="80%" fill="currentColor" stroke="none">{'  if (debt.isCritical) {'}</text>
+                   <text x="81%" y="83%" fill="rgba(255,255,255,0.8)" stroke="none">{'    await purgeLegacySystems(targetId);'}</text>
+                   <text x="81%" y="86%" fill="rgba(255,255,255,0.8)" stroke="none">{'    await deployModernArchitecture(targetId);'}</text>
+                   <text x="79%" y="89%" fill="currentColor" stroke="none">{'  }'}</text>
+                   <text x="79%" y="92%" fill="currentColor" stroke="none">{'  return status.OPTIMIZED;'}</text>
+                   <text x="77%" y="95%" fill="#F5B700" stroke="none">{'}'}</text>
+                 </g>
                  
                  {/* Connection from Box 1 to Box 3 */}
                  <path d="M 80% 29% V 70%" strokeDasharray="4 2" />

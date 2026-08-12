@@ -19,7 +19,7 @@ export function IntroPreloader({ onComplete }: { onComplete: () => void }) {
       transition={{ duration: 1.2, ease: easeDelicate }}
     >
       <div className="relative flex items-center justify-center mb-[5vh] md:mb-[8vh]">
-        <svg className="w-[65vw] md:w-[50vw] max-w-[600px] text-white overflow-visible" viewBox="0 0 406 348" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className="w-[85vw] md:w-[50vw] max-w-[600px] text-white overflow-visible" viewBox="0 0 406 348" fill="none" xmlns="http://www.w3.org/2000/svg">
           <motion.path 
             d="M252.188 140.625L236.562 117.188L377.188 0L405.996 41.9922L252.188 140.625Z" 
             fill="#F5B700"
