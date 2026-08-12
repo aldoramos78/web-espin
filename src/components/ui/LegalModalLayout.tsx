@@ -21,26 +21,24 @@ export function LegalModalLayout({ children }: { children: React.ReactNode }) {
       {/* Container */}
       <div className="w-full max-w-4xl bg-black border border-zinc-800 shadow-2xl relative z-10 flex flex-col mt-12 md:mt-0 max-h-[90vh]">
         
-        {/* Header / Top Bar */}
-        <div className="flex justify-end items-center px-6 md:px-10 py-6 bg-black sticky top-0 z-20">
-          <button 
-            onClick={handleClose}
-            className="p-4 -mr-4 group transition-transform duration-500 hover:rotate-90 z-10"
-            aria-label="Cerrar modal"
-          >
-            <div className="relative w-6 h-6">
-              <span className="absolute top-1/2 left-0 w-6 h-[1px] bg-zinc-500 group-hover:bg-[#F5B700] rotate-45 transition-colors duration-300"></span>
-              <span className="absolute top-1/2 left-0 w-6 h-[1px] bg-zinc-500 group-hover:bg-[#F5B700] -rotate-45 transition-colors duration-300"></span>
-            </div>
-          </button>
-        </div>
-
         {/* Scrollable Content */}
         <div className="p-6 md:p-12 overflow-y-auto custom-scrollbar relative">
+          {/* Close Button */}
+          <button 
+            onClick={handleClose}
+            className="absolute top-6 right-6 md:top-12 md:right-12 p-2 group transition-transform duration-500 hover:rotate-90 z-50"
+            aria-label="Cerrar modal"
+          >
+            <div className="relative w-8 h-8">
+              <span className="absolute top-1/2 left-0 w-8 h-[2px] bg-zinc-500 group-hover:bg-[#F5B700] rotate-45 transition-colors duration-300"></span>
+              <span className="absolute top-1/2 left-0 w-8 h-[2px] bg-zinc-500 group-hover:bg-[#F5B700] -rotate-45 transition-colors duration-300"></span>
+            </div>
+          </button>
+          
           {/* Subtle Grid Background inside content */}
           <div className="absolute inset-0 z-0 pointer-events-none opacity-10" style={{ backgroundImage: "radial-gradient(#666 1px, transparent 1px)", backgroundSize: "40px 40px" }}></div>
           
-          <div className="relative z-10">
+          <div className="relative z-10 pr-12 md:pr-16">
             {children}
           </div>
         </div>
