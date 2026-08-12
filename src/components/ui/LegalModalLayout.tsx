@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
-export function LegalModalLayout({ children, title }: { children: React.ReactNode, title?: string }) {
+export function LegalModalLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
 
   const handleClose = () => {
@@ -22,13 +22,7 @@ export function LegalModalLayout({ children, title }: { children: React.ReactNod
       <div className="w-full max-w-4xl bg-black border border-zinc-800 shadow-2xl relative z-10 flex flex-col mt-12 md:mt-0 max-h-[90vh]">
         
         {/* Header / Top Bar */}
-        <div className="flex justify-between items-center px-6 md:px-10 py-6 bg-black sticky top-0 z-20">
-          <div className="flex items-center gap-3">
-            <div className="w-2 h-2 bg-[#F5B700]"></div>
-            <span className="font-michroma text-xs md:text-sm tracking-widest text-zinc-400 uppercase">
-              {title}
-            </span>
-          </div>
+        <div className="flex justify-end items-center px-6 md:px-10 py-6 bg-black sticky top-0 z-20">
           <button 
             onClick={handleClose}
             className="p-4 -mr-4 group transition-transform duration-500 hover:rotate-90 z-10"

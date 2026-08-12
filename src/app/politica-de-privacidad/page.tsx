@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function PoliticaPrivacidad() {
   return (
     <div className="min-h-screen bg-black">
-      <LegalModalLayout title="Política de Privacidad">
+      <LegalModalLayout>
         <h1 className="font-michroma text-2xl md:text-4xl text-[#F5B700] uppercase tracking-tighter mb-8 relative z-10">
           POLÍTICA DE PRIVACIDAD
         </h1>
