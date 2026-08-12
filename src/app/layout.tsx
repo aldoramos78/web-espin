@@ -48,16 +48,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  modal,
 }: Readonly<{
   children: React.ReactNode;
-  modal: React.ReactNode;
 }>) {
   return (
     <html lang="es" className="scroll-smooth bg-black">
       <body className={`${michroma.variable} ${inter.variable} antialiased bg-black`}>
         {children}
-        {modal}
       </body>
     </html>
   );

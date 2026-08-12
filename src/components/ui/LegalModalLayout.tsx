@@ -5,28 +5,21 @@ import { useRouter } from "next/navigation";
 export function LegalModalLayout({ children, title }: { children: React.ReactNode, title?: string }) {
   const router = useRouter();
 
-  // Prevent scrolling on background when modal is open
-  useEffect(() => {
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, []);
-
   const handleClose = () => {
-    router.push("/", { scroll: false });
+    // Si se abrió en una pestaña nueva (target="_blank"), window.close() funcionará
+    // Si no, volvemos a la home como fallback
+    if (window.history.length > 1) {
+      router.back();
+    } else {
+      window.close();
+      router.push("/");
+    }
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-6 md:p-12">
-      {/* Blurred Backdrop */}
-      <div 
-        className="absolute inset-0 bg-black/60 backdrop-blur-md cursor-pointer transition-opacity duration-500" 
-        onClick={handleClose}
-      ></div>
-
-      {/* "Popup" Container */}
-      <div className="w-full max-w-4xl bg-black border border-zinc-800 shadow-2xl relative z-10 flex flex-col overflow-hidden max-h-[90vh] animate-in fade-in zoom-in-95 duration-300">
+    <div className="min-h-screen bg-black flex flex-col items-center justify-center p-6 md:p-12">
+      {/* Container */}
+      <div className="w-full max-w-4xl bg-black border border-zinc-800 shadow-2xl relative z-10 flex flex-col mt-12 md:mt-0 max-h-[90vh]">
         
         {/* Header / Top Bar */}
         <div className="flex justify-between items-center px-6 md:px-10 py-6 border-b border-zinc-800 bg-black sticky top-0 z-20">

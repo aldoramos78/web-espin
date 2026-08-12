@@ -420,7 +420,7 @@ export default function EspinLanding() {
                   { name: 'Privacidad', path: '/politica-de-privacidad' },
                   { name: 'Cookies', path: '/politica-de-cookies' }
                 ].map((item) => (
-                  <Link key={item.name} href={item.path} className="group flex justify-between items-center py-4 md:py-6 border-b border-zinc-900 transition-all duration-300 hover:border-zinc-800 cursor-pointer">
+                  <Link key={item.name} href={item.path} target="_blank" rel="noopener noreferrer" className="group flex justify-between items-center py-4 md:py-6 border-b border-zinc-900 transition-all duration-300 hover:border-zinc-800 cursor-pointer">
                     <span className="text-white font-normal group-hover:text-[#F5B700] group-hover:scale-[1.02] transform transition-all duration-300 origin-left uppercase text-xs md:text-sm tracking-[0.15em] md:tracking-[0.2em]">{item.name}</span>
                     <span className="text-zinc-500 group-hover:text-[#F5B700] transition-colors duration-300 text-base md:text-lg transform group-hover:-translate-y-1 group-hover:translate-x-1">↗</span>
                   </Link>
