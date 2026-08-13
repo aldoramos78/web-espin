@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
+import Link from "next/link";
 
 export function SmartHeader({ onContactClick }: { onContactClick: () => void }) {
   const easePremium: [number, number, number, number] = [0.76, 0, 0.24, 1];
@@ -72,13 +73,13 @@ export function SmartHeader({ onContactClick }: { onContactClick: () => void }) 
           
           {/* Nav Right (CTA + Hamburger) */}
           <div className="flex justify-end items-center gap-4 md:gap-8 relative z-[110]">
-            <a 
+            <Link 
               href="/manifiesto"
               className="relative hidden md:inline-block text-[#CCCCCC] font-michroma text-xs tracking-widest pb-1 group transition-colors hover:text-white"
             >
               DOC<span className="text-[#F5B700]">.00</span>
               <span className="absolute bottom-0 left-0 w-full h-[1px] bg-[#F5B700] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-700 ease-[0.76,0,0.24,1]"></span>
-            </a>
+            </Link>
             <button type="button" className="rings-btn small !hidden md:!inline-flex" onClick={onContactClick}>
               <i></i><i></i><i></i>
               <span>Inicia la Auditoría</span>
