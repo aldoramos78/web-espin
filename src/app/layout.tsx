@@ -27,11 +27,20 @@ export const metadata: Metadata = {
     title: "espín | alta costura tecnológica.",
     description: "Transformamos infraestructuras obsoletas en ecosistemas de alto rendimiento.",
     siteName: "Espín Labs",
+    images: [
+      {
+        url: "https://www.espinlabs.com/og-espin-v1.png",
+        width: 1200,
+        height: 630,
+        type: "image/png",
+      }
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "espín | alta costura tecnológica.",
     description: "Transformamos infraestructuras obsoletas en ecosistemas de alto rendimiento.",
+    images: ["https://www.espinlabs.com/og-espin-v1.png"],
   },
   robots: {
     index: true,
