@@ -54,10 +54,10 @@ export default function Manifiesto() {
           
           <div className="md:w-4/12 flex flex-col md:border-l md:border-[#222222] md:pl-10 relative">
             <div className="hidden md:block absolute -left-[1px] top-1/2 -translate-y-1/2 w-[1px] h-24 bg-[#F5B700]/40"></div>
-            <p className="text-base md:text-lg leading-relaxed mb-6 font-thin text-[#AAAAAA]">
+            <p className="text-base md:text-lg leading-relaxed mb-6 font-thin text-[#FFFFFF]">
               No somos una agencia creativa. Somos una consultora de infraestructura tecnológica. Nuestro trabajo consiste en auditar sistemas lentos, ineficientes y desfasados, para reconstruirlos con la precisión de un bisturí.
             </p>
-            <p className="text-base md:text-lg leading-relaxed font-thin text-[#AAAAAA]">
+            <p className="text-base md:text-lg leading-relaxed font-thin text-[#FFFFFF]">
               Esa obsesión por erradicar lo innecesario en el código de nuestros clientes es exactamente la misma que rige nuestra propia marca. No hay adornos. No hay colores de relleno. No hay ruido.
             </p>
           </div>
@@ -73,10 +73,10 @@ export default function Manifiesto() {
               LA <span className="text-[#F5B700]">REGLA</span> DEL VACÍO
               <span className="text-[#888888] text-xs md:text-sm tracking-widest font-inter font-thin mt-2 block">[ NUESTRO CÓDIGO CROMÁTICO ]</span>
             </h2>
-            <p className="text-base md:text-lg leading-relaxed mb-6 font-thin text-[#AAAAAA]">
+            <p className="text-base md:text-lg leading-relaxed mb-6 font-thin text-[#FFFFFF]">
               El 90% de nuestro entorno opera en un negro absoluto. En la mayoría de las agencias, el color se utiliza para compensar la falta de contenido o para distraer. Nosotros usamos el vacío como herramienta arquitectónica. El negro no compite con la información, la aísla. El blanco puro es la única voz permitida sobre ese vacío.
             </p>
-            <p className="text-base md:text-lg leading-relaxed font-thin text-[#AAAAAA]">
+            <p className="text-base md:text-lg leading-relaxed font-thin text-[#FFFFFF]">
               Nuestro único acento, el amarillo industrial (#F5B700), funciona como una luz forense: no rellena espacios, solo ilumina los datos críticos o las acciones que generan negocio.
             </p>
           </section>
@@ -88,10 +88,10 @@ export default function Manifiesto() {
               <span className="text-[#F5B700]">JUNTOS</span>, PERO NO REVUELTOS
               <span className="text-[#888888] text-xs md:text-sm tracking-widest font-inter font-thin mt-2 block">[ EL ISOTIPO ]</span>
             </h2>
-            <p className="text-base md:text-lg leading-relaxed mb-6 font-thin text-[#AAAAAA]">
+            <p className="text-base md:text-lg leading-relaxed mb-6 font-thin text-[#FFFFFF]">
               El símbolo de espín —nuestra 'e' minúscula atravesada por una cuña amarilla— no es un capricho geométrico. Genera un corte en espacio negativo que separa visualmente dos masas dentro de la misma forma.
             </p>
-            <p className="text-base md:text-lg leading-relaxed font-thin text-[#AAAAAA]">
+            <p className="text-base md:text-lg leading-relaxed font-thin text-[#FFFFFF]">
               Representa la intersección entre los dos sistemas que operan en nuestros ecosistemas: la Inteligencia Artificial y la decisión humana. El código y el negocio. La máquina y el criterio. El corte demuestra que conviven en el mismo entorno, pero delimita sus funciones.
             </p>
           </section>
@@ -103,10 +103,10 @@ export default function Manifiesto() {
               <span className="text-[#F5B700]">ARQUITECTURA</span> ANTES QUE ESTÉTICA
               <span className="text-[#888888] text-xs md:text-sm tracking-widest font-inter font-thin mt-2 block">[ LA TIPOGRAFÍA ]</span>
             </h2>
-            <p className="text-base md:text-lg leading-relaxed mb-6 font-thin text-[#AAAAAA]">
+            <p className="text-base md:text-lg leading-relaxed mb-6 font-thin text-[#FFFFFF]">
               Solo operamos con dos fuentes porque no necesitamos más para establecer jerarquía. Utilizamos <span className="font-michroma text-[10px] md:text-xs text-[#CCCCCC]">MICHROMA</span> para nuestros titulares no porque sea estética, sino porque su geometría extendida y fría funciona como el plano técnico de un edificio. Transmite orden de un solo vistazo.
             </p>
-            <p className="text-base md:text-lg leading-relaxed font-thin text-[#AAAAAA]">
+            <p className="text-base md:text-lg leading-relaxed font-thin text-[#FFFFFF]">
               Para el cuerpo de texto, donde tú necesitas comprender lo que hacemos, liberamos la familia Inter: neutra, implacable y diseñada para leerse en pantallas de alto rendimiento sin cansar el ojo humano.
             </p>
           </section>
@@ -135,7 +135,7 @@ export default function Manifiesto() {
               </h2>
             </div>
             <div className="md:w-7/12 lg:w-2/3">
-              <p className="text-base md:text-lg leading-relaxed text-[#AAAAAA] font-thin">
+              <p className="text-base md:text-lg leading-relaxed text-[#FFFFFF] font-thin">
                 Esta doctrina estética es el reflejo de nuestro código. Si eliminamos lo superfluo en nuestra propia casa, imagina lo que hacemos cuando entramos a auditar la tuya. No seguimos tendencias, construimos infraestructuras que aguantan el peso de tu facturación.
               </p>
             </div>
