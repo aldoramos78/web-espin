@@ -1,28 +1,9 @@
-"use client";
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import Link from 'next/link';
 
 export default function Manifiesto() {
-  const scrollContainerRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const container = scrollContainerRef.current;
-    if (!container) return;
-
-    const handleWheel = (e: WheelEvent) => {
-      // Solo en escritorio mapeamos el scroll vertical a horizontal
-      if (window.innerWidth >= 768 && e.deltaY !== 0) {
-        e.preventDefault();
-        container.scrollLeft += e.deltaY * 1.5;
-      }
-    };
-
-    container.addEventListener('wheel', handleWheel, { passive: false });
-    return () => container.removeEventListener('wheel', handleWheel);
-  }, []);
-
   const BackButton = () => (
-    <div className="mb-12 md:mb-16">
+    <div className="mb-16 md:mb-24">
       <Link 
         href="/"
         className="group inline-flex items-center gap-3 text-[#888888] hover:text-[#F5B700] transition-colors duration-300 font-michroma text-xs tracking-widest uppercase"
@@ -42,172 +23,115 @@ export default function Manifiesto() {
       
       {/* Sello de agua fondo (Isotipo gigante) */}
       <div 
-        className="fixed top-0 right-0 -mr-40 -mt-20 opacity-[0.03] pointer-events-none select-none text-[60vw] font-michroma leading-none"
+        className="fixed top-0 right-0 -mr-40 -mt-20 opacity-[0.02] pointer-events-none select-none text-[60vw] font-michroma leading-none"
         aria-hidden="true"
       >
         e
       </div>
 
-      <main 
-        ref={scrollContainerRef}
-        className="relative z-10 w-full h-screen overflow-y-auto md:overflow-x-auto md:overflow-y-hidden scroll-smooth"
-      >
+      <main className="relative z-10 w-full max-w-7xl mx-auto px-6 pt-12 pb-32 md:pt-24 md:pb-48">
         
-        {/* --- MOBILE VIEW (Vertical) --- */}
-        <div className="md:hidden max-w-3xl mx-auto px-6 pt-12 pb-32">
-          
-          <BackButton />
+        <BackButton />
 
-          <div className="mb-12 font-inter font-thin tracking-widest text-[#888888] text-sm uppercase">
-            [ DOC.00 / DOCTRINA OPERATIVA ]
-          </div>
-
-          <h1 className="font-michroma text-4xl text-[#FFFFFF] leading-tight mb-8">
-            EL <span className="text-[#F5B700]">LUJO</span> ES LA<br />
-            AUSENCIA DE <span className="text-[#F5B700]">RUIDO.</span>
-          </h1>
-          
-          <p className="text-xl font-inter font-light text-[#CCCCCC] leading-relaxed mb-16">
-            Por qué espín se ve, se lee y opera como lo hace.
-          </p>
-
-          <section className="mb-16">
-            <p className="text-lg leading-relaxed mb-6 font-light">
-              No somos una agencia creativa. Somos una consultora de infraestructura tecnológica. Nuestro trabajo consiste en auditar sistemas lentos, ineficientes y desfasados, para reconstruirlos con la precisión de un bisturí.
-            </p>
-            <p className="text-lg leading-relaxed font-light">
-              Esa obsesión por erradicar lo innecesario en el código de nuestros clientes es exactamente la misma que rige nuestra propia marca. No hay adornos. No hay colores de relleno. No hay ruido.
-            </p>
-          </section>
-
-          <hr className="border-t border-[#222222] my-16" />
-
-          <section className="mb-16">
-            <h2 className="font-michroma text-xl text-[#FFFFFF] mb-6">
-              LA <span className="text-[#F5B700]">REGLA</span> DEL VACÍO
-              <span className="text-[#888888] text-sm tracking-widest font-inter font-thin mt-2 block">[ NUESTRO CÓDIGO CROMÁTICO ]</span>
-            </h2>
-            <p className="text-lg leading-relaxed mb-6 font-light">
-              El 90% de nuestro entorno opera en un negro absoluto. En la mayoría de las agencias, el color se utiliza para compensar la falta de contenido o para distraer. Nosotros usamos el vacío como herramienta arquitectónica. El negro no compite con la información, la aísla. El blanco puro es la única voz permitida sobre ese vacío.
-            </p>
-            <p className="text-lg leading-relaxed font-light">
-              Nuestro único acento, el amarillo industrial (#F5B700), funciona como una luz forense: no rellena espacios, solo ilumina los datos críticos o las acciones que generan negocio.
-            </p>
-          </section>
-
-          <section className="mb-16">
-            <h2 className="font-michroma text-xl text-[#FFFFFF] mb-6">
-              <span className="text-[#F5B700]">JUNTOS</span>, PERO NO REVUELTOS
-              <span className="text-[#888888] text-sm tracking-widest font-inter font-thin mt-2 block">[ EL ISOTIPO ]</span>
-            </h2>
-            <p className="text-lg leading-relaxed mb-6 font-light">
-              El símbolo de espín —nuestra 'e' minúscula atravesada por una cuña amarilla— no es un capricho geométrico. Genera un corte en espacio negativo que separa visualmente dos masas dentro de la misma forma.
-            </p>
-            <p className="text-lg leading-relaxed font-light">
-              Representa la intersección entre los dos sistemas que operan en nuestros ecosistemas: la Inteligencia Artificial y la decisión humana. El código y el negocio. La máquina y el criterio. El corte demuestra que conviven en el mismo entorno, pero delimita sus funciones.
-            </p>
-          </section>
-
-          <section className="mb-16">
-            <h2 className="font-michroma text-xl text-[#FFFFFF] mb-6">
-              <span className="text-[#F5B700]">ARQUITECTURA</span> ANTES QUE ESTÉTICA
-              <span className="text-[#888888] text-sm tracking-widest font-inter font-thin mt-2 block">[ LA TIPOGRAFÍA ]</span>
-            </h2>
-            <p className="text-lg leading-relaxed mb-6 font-light">
-              Solo operamos con dos fuentes porque no necesitamos más para establecer jerarquía. Utilizamos <span className="font-michroma text-sm">MICHROMA</span> para nuestros titulares no porque sea estética, sino porque su geometría extendida y fría funciona como el plano técnico de un edificio. Transmite orden de un solo vistazo.
-            </p>
-            <p className="text-lg leading-relaxed font-light">
-              Para el cuerpo de texto, donde tú necesitas comprender lo que hacemos, liberamos la familia Inter: neutra, implacable y diseñada para leerse en pantallas de alto rendimiento sin cansar el ojo humano.
-            </p>
-          </section>
-
-          <section className="mt-24 p-8 border border-[#222222] bg-[#0F0F0F] relative">
-            <div className="absolute top-0 left-0 w-2 h-2 bg-[#F5B700]"></div>
-            <div className="absolute bottom-0 right-0 w-2 h-2 bg-[#F5B700]"></div>
-            <h2 className="font-michroma text-lg text-[#F5B700] mb-4">
-              ALTA COSTURA TECNOLÓGICA
-            </h2>
-            <p className="text-base leading-relaxed text-[#CCCCCC] font-light">
-              Esta doctrina estética es el reflejo de nuestro código. Si eliminamos lo superfluo en nuestra propia casa, imagina lo que hacemos cuando entramos a auditar la tuya. No seguimos tendencias, construimos infraestructuras que aguantan el peso de tu facturación.
-            </p>
-          </section>
-
-        </div>
-
-        {/* --- DESKTOP VIEW (Horizontal Apaisado) --- */}
-        <div className="hidden md:flex h-full w-max items-center px-12 lg:px-24 gap-24 lg:gap-32">
-          
-          <div className="w-[600px] flex flex-col pt-12">
-            <BackButton />
-            <div className="mb-12 font-inter font-thin tracking-widest text-[#888888] text-sm uppercase">
+        {/* --- CABECERA --- */}
+        <div className="flex flex-col md:flex-row justify-between items-start mb-24 md:mb-32 relative">
+          <div className="md:w-7/12">
+            <div className="mb-8 font-inter font-thin tracking-widest text-[#888888] text-xs md:text-sm uppercase flex items-center gap-4">
               [ DOC.00 / DOCTRINA OPERATIVA ]
+              <span className="hidden md:block w-12 h-[1px] bg-[#333333]"></span>
             </div>
-            <h1 className="font-michroma text-5xl lg:text-6xl xl:text-7xl text-[#FFFFFF] leading-tight mb-8">
+            <h1 className="font-michroma text-4xl md:text-6xl lg:text-7xl text-[#FFFFFF] leading-[1.1] mb-8">
               EL <span className="text-[#F5B700]">LUJO</span> ES LA<br />
               AUSENCIA DE <span className="text-[#F5B700]">RUIDO.</span>
             </h1>
-            <p className="text-2xl font-inter font-light text-[#CCCCCC] leading-relaxed mb-12">
+            <p className="text-xl md:text-2xl font-inter font-extralight text-[#CCCCCC] leading-relaxed mb-12 md:mb-0">
               Por qué espín se ve, se lee y opera como lo hace.
             </p>
-            <p className="text-lg leading-relaxed mb-6 font-light">
+          </div>
+          
+          <div className="md:w-4/12 flex flex-col md:border-l md:border-[#222222] md:pl-10 md:pt-4 relative">
+            <div className="hidden md:block absolute -left-[1px] top-4 w-[1px] h-12 bg-[#F5B700]/40"></div>
+            <p className="text-base md:text-lg leading-relaxed mb-6 font-thin text-[#AAAAAA]">
               No somos una agencia creativa. Somos una consultora de infraestructura tecnológica. Nuestro trabajo consiste en auditar sistemas lentos, ineficientes y desfasados, para reconstruirlos con la precisión de un bisturí.
             </p>
-            <p className="text-lg leading-relaxed font-light">
+            <p className="text-base md:text-lg leading-relaxed font-thin text-[#AAAAAA]">
               Esa obsesión por erradicar lo innecesario en el código de nuestros clientes es exactamente la misma que rige nuestra propia marca. No hay adornos. No hay colores de relleno. No hay ruido.
             </p>
           </div>
+        </div>
 
-          <div className="w-[450px] lg:w-[500px] flex flex-col border-l border-[#222222] pl-16">
-            <h2 className="font-michroma text-2xl text-[#FFFFFF] mb-6">
+        {/* Separador fino amarillo / Artefacto divisor */}
+        <div className="w-full flex items-center justify-center mb-24 md:mb-32">
+          <div className="h-px bg-gradient-to-r from-transparent via-[#F5B700]/30 to-transparent w-full"></div>
+          <div className="absolute w-2 h-2 rotate-45 border border-[#F5B700]/50 bg-[#0A0A0A]"></div>
+        </div>
+
+        {/* --- GRID DESIGUAL --- */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-y-20 md:gap-y-0 md:gap-x-12 relative">
+          
+          {/* Bloque 1 */}
+          <section className="md:col-span-5 md:col-start-1 relative md:pb-32">
+            <div className="hidden md:block absolute -left-6 top-2 w-[2px] h-12 bg-[#F5B700]/50"></div>
+            <h2 className="font-michroma text-xl md:text-2xl text-[#FFFFFF] mb-6">
               LA <span className="text-[#F5B700]">REGLA</span> DEL VACÍO
-              <span className="text-[#888888] text-sm tracking-widest font-inter font-thin mt-2 block">[ NUESTRO CÓDIGO CROMÁTICO ]</span>
+              <span className="text-[#888888] text-xs md:text-sm tracking-widest font-inter font-thin mt-2 block">[ NUESTRO CÓDIGO CROMÁTICO ]</span>
             </h2>
-            <p className="text-lg leading-relaxed mb-6 font-light">
+            <p className="text-base md:text-lg leading-relaxed mb-6 font-thin text-[#AAAAAA]">
               El 90% de nuestro entorno opera en un negro absoluto. En la mayoría de las agencias, el color se utiliza para compensar la falta de contenido o para distraer. Nosotros usamos el vacío como herramienta arquitectónica. El negro no compite con la información, la aísla. El blanco puro es la única voz permitida sobre ese vacío.
             </p>
-            <p className="text-lg leading-relaxed font-light">
+            <p className="text-base md:text-lg leading-relaxed font-thin text-[#AAAAAA]">
               Nuestro único acento, el amarillo industrial (#F5B700), funciona como una luz forense: no rellena espacios, solo ilumina los datos críticos o las acciones que generan negocio.
             </p>
-          </div>
+          </section>
 
-          <div className="w-[450px] lg:w-[500px] flex flex-col border-l border-[#222222] pl-16">
-            <h2 className="font-michroma text-2xl text-[#FFFFFF] mb-6">
+          {/* Bloque 2 */}
+          <section className="md:col-span-6 md:col-start-7 relative md:mt-48 md:pb-32">
+            <div className="hidden md:block absolute -left-6 top-2 w-[2px] h-12 bg-[#F5B700]/50"></div>
+            <h2 className="font-michroma text-xl md:text-2xl text-[#FFFFFF] mb-6">
               <span className="text-[#F5B700]">JUNTOS</span>, PERO NO REVUELTOS
-              <span className="text-[#888888] text-sm tracking-widest font-inter font-thin mt-2 block">[ EL ISOTIPO ]</span>
+              <span className="text-[#888888] text-xs md:text-sm tracking-widest font-inter font-thin mt-2 block">[ EL ISOTIPO ]</span>
             </h2>
-            <p className="text-lg leading-relaxed mb-6 font-light">
+            <p className="text-base md:text-lg leading-relaxed mb-6 font-thin text-[#AAAAAA]">
               El símbolo de espín —nuestra 'e' minúscula atravesada por una cuña amarilla— no es un capricho geométrico. Genera un corte en espacio negativo que separa visualmente dos masas dentro de la misma forma.
             </p>
-            <p className="text-lg leading-relaxed font-light">
+            <p className="text-base md:text-lg leading-relaxed font-thin text-[#AAAAAA]">
               Representa la intersección entre los dos sistemas que operan en nuestros ecosistemas: la Inteligencia Artificial y la decisión humana. El código y el negocio. La máquina y el criterio. El corte demuestra que conviven en el mismo entorno, pero delimita sus funciones.
             </p>
-          </div>
+          </section>
 
-          <div className="w-[450px] lg:w-[500px] flex flex-col border-l border-[#222222] pl-16">
-            <h2 className="font-michroma text-2xl text-[#FFFFFF] mb-6">
+          {/* Bloque 3 */}
+          <section className="md:col-span-5 md:col-start-2 relative md:mt-24 md:pb-32">
+            <div className="hidden md:block absolute -left-6 top-2 w-[2px] h-12 bg-[#F5B700]/50"></div>
+            <h2 className="font-michroma text-xl md:text-2xl text-[#FFFFFF] mb-6">
               <span className="text-[#F5B700]">ARQUITECTURA</span> ANTES QUE ESTÉTICA
-              <span className="text-[#888888] text-sm tracking-widest font-inter font-thin mt-2 block">[ LA TIPOGRAFÍA ]</span>
+              <span className="text-[#888888] text-xs md:text-sm tracking-widest font-inter font-thin mt-2 block">[ LA TIPOGRAFÍA ]</span>
             </h2>
-            <p className="text-lg leading-relaxed mb-6 font-light">
-              Solo operamos con dos fuentes porque no necesitamos más para establecer jerarquía. Utilizamos <span className="font-michroma text-sm">MICHROMA</span> para nuestros titulares no porque sea estética, sino porque su geometría extendida y fría funciona como el plano técnico de un edificio. Transmite orden de un solo vistazo.
+            <p className="text-base md:text-lg leading-relaxed mb-6 font-thin text-[#AAAAAA]">
+              Solo operamos con dos fuentes porque no necesitamos más para establecer jerarquía. Utilizamos <span className="font-michroma text-[10px] md:text-xs text-[#CCCCCC]">MICHROMA</span> para nuestros titulares no porque sea estética, sino porque su geometría extendida y fría funciona como el plano técnico de un edificio. Transmite orden de un solo vistazo.
             </p>
-            <p className="text-lg leading-relaxed font-light">
+            <p className="text-base md:text-lg leading-relaxed font-thin text-[#AAAAAA]">
               Para el cuerpo de texto, donde tú necesitas comprender lo que hacemos, liberamos la familia Inter: neutra, implacable y diseñada para leerse en pantallas de alto rendimiento sin cansar el ojo humano.
             </p>
-          </div>
+          </section>
 
-          <div className="w-[400px] lg:w-[450px] ml-8 mr-24">
-            <div className="p-12 border border-[#333333] bg-[#0F0F0F] relative group hover:border-[#F5B700] transition-colors duration-500">
+          {/* Cierre / Bloque 4 */}
+          <section className="md:col-span-6 md:col-start-7 md:mt-16">
+            <div className="p-8 md:p-12 border border-[#222222] hover:border-[#F5B700]/40 transition-colors duration-500 bg-[#0F0F0F] relative group">
+              {/* Artefactos de esquina */}
               <div className="absolute top-0 left-0 w-2 h-2 bg-[#F5B700]"></div>
               <div className="absolute bottom-0 right-0 w-2 h-2 bg-[#F5B700]"></div>
-              <h2 className="font-michroma text-2xl text-[#F5B700] mb-6 leading-tight">
+              
+              <div className="absolute -top-[1px] right-8 w-12 h-[1px] bg-[#F5B700]/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute -bottom-[1px] left-8 w-12 h-[1px] bg-[#F5B700]/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+              <h2 className="font-michroma text-lg md:text-2xl text-[#F5B700] mb-6 leading-tight">
                 ALTA COSTURA TECNOLÓGICA
               </h2>
-              <p className="text-lg leading-relaxed text-[#CCCCCC] font-light">
+              <p className="text-base md:text-lg leading-relaxed text-[#AAAAAA] font-thin">
                 Esta doctrina estética es el reflejo de nuestro código. Si eliminamos lo superfluo en nuestra propia casa, imagina lo que hacemos cuando entramos a auditar la tuya. No seguimos tendencias, construimos infraestructuras que aguantan el peso de tu facturación.
               </p>
             </div>
-          </div>
+          </section>
           
         </div>
       </main>
