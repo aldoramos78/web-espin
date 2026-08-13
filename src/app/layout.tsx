@@ -29,10 +29,10 @@ export const metadata: Metadata = {
     siteName: "Espín Labs",
     images: [
       {
-        url: "https://www.espinlabs.com/og-espin-v1.png",
+        url: "https://www.espinlabs.com/og-espin-v1.jpg",
         width: 1200,
         height: 630,
-        type: "image/png",
+        type: "image/jpeg",
       }
     ],
   },
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "espín | alta costura tecnológica.",
     description: "Transformamos infraestructuras obsoletas en ecosistemas de alto rendimiento.",
-    images: ["https://www.espinlabs.com/og-espin-v1.png"],
+    images: ["https://www.espinlabs.com/og-espin-v1.jpg"],
   },
   robots: {
     index: true,
