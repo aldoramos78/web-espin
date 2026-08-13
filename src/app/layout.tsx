@@ -14,33 +14,30 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://espinlabs.com"),
-  title: "espín | alta costura tecnológica.",
-  description: "Auditamos y reconstruimos infraestructuras obsoletas. Transformamos negocios que pierden dinero en ecosistemas digitales de alto rendimiento.",
-  keywords: ["auditoría técnica", "arquitectura de software", "automatización IA", "deuda técnica", "desarrollo a medida", "espin labs"],
-  authors: [{ name: "Espín Labs" }],
-  creator: "Espín Labs",
+  title: 'espín | Alta Costura Tecnológica',
+  description: 'Transformamos negocios que pierden dinero en ecosistemas digitales de alto rendimiento.',
+  metadataBase: new URL('https://www.espinlabs.com'),
   openGraph: {
-    type: "website",
-    locale: "es_ES",
-    url: "https://espinlabs.com",
-    title: "espín | alta costura tecnológica.",
-    description: "Transformamos infraestructuras obsoletas en ecosistemas de alto rendimiento.",
-    siteName: "Espín Labs",
+    title: 'espín | Alta Costura Tecnológica',
+    description: 'Transformamos infraestructuras obsoletas...',
+    url: 'https://www.espinlabs.com',
+    siteName: 'espín',
     images: [
       {
-        url: "https://www.espinlabs.com/og-espin-v1.jpg",
+        url: '/og-espin.jpg',
         width: 1200,
         height: 630,
-        type: "image/jpeg",
-      }
+        alt: 'espín - Alta Costura Tecnológica',
+      },
     ],
+    locale: 'es_ES',
+    type: 'website',
   },
   twitter: {
-    card: "summary_large_image",
-    title: "espín | alta costura tecnológica.",
-    description: "Transformamos infraestructuras obsoletas en ecosistemas de alto rendimiento.",
-    images: ["https://www.espinlabs.com/og-espin-v1.jpg"],
+    card: 'summary_large_image',
+    title: 'espín | Alta Costura Tecnológica',
+    description: 'Transformamos infraestructuras obsoletas...',
+    images: ['/og-espin.jpg'],
   },
   robots: {
     index: true,
