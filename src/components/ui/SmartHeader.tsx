@@ -75,9 +75,9 @@ export function SmartHeader({ onContactClick }: { onContactClick: () => void }) 
           <div className="flex justify-end items-center gap-4 md:gap-8 relative z-[110]">
             <Link 
               href="/manifiesto"
-              className="relative hidden md:inline-block text-[#CCCCCC] font-michroma text-xs tracking-widest pb-1 group transition-colors hover:text-white"
+              className="relative hidden lg:inline-block text-[#CCCCCC] font-michroma text-[10px] xl:text-xs tracking-widest pb-1 group transition-colors hover:text-white whitespace-nowrap"
             >
-              DOC<span className="text-[#F5B700]">.00</span>
+              DOC<span className="text-[#F5B700]">.00</span> - MANIFIESTO
               <span className="absolute bottom-0 left-0 w-full h-[1px] bg-[#F5B700] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-700 ease-[0.76,0,0.24,1]"></span>
             </Link>
             <button type="button" className="rings-btn small !hidden md:!inline-flex" onClick={onContactClick}>
