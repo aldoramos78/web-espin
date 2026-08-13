@@ -14,6 +14,13 @@ export function PreloaderManager() {
     if (!hasSeen) {
       setShowPreloader(true);
     }
+    
+    // Clear session storage on hard refresh (F5/Reload)
+    const handleBeforeUnload = () => {
+      sessionStorage.removeItem("hasSeenPreloader");
+    };
+    window.addEventListener("beforeunload", handleBeforeUnload);
+    return () => window.removeEventListener("beforeunload", handleBeforeUnload);
   }, []);
   
   useEffect(() => {
