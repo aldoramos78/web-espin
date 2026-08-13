@@ -6,14 +6,14 @@ import { ProgressBar } from "./ProgressBar";
 
 export function PreloaderManager() {
   const [showPreloader, setShowPreloader] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
+  const [isChecking, setIsChecking] = useState(true);
   
   useEffect(() => {
-    setIsMounted(true);
     const hasSeen = sessionStorage.getItem("hasSeenPreloader");
     if (!hasSeen) {
       setShowPreloader(true);
     }
+    setIsChecking(false);
     
     // Clear session storage on hard refresh (F5/Reload)
     const handleBeforeUnload = () => {
@@ -25,19 +25,21 @@ export function PreloaderManager() {
   
   useEffect(() => {
     // We add a specific class to body to prevent scrolling while preloader is active
-    if (showPreloader) {
+    if (showPreloader || isChecking) {
       document.documentElement.classList.add("overflow-hidden", "h-screen");
     } else {
       document.documentElement.classList.remove("overflow-hidden", "h-screen");
     }
-  }, [showPreloader]);
+  }, [showPreloader, isChecking]);
 
   const handleComplete = () => {
     setShowPreloader(false);
     sessionStorage.setItem("hasSeenPreloader", "true");
   };
 
-  if (!isMounted) return null;
+  if (isChecking) {
+    return <div className="fixed inset-0 z-[100] bg-black"></div>;
+  }
 
   return (
     <>
