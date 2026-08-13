@@ -72,6 +72,19 @@ export default function EspinLanding() {
                 </ContactTrigger>
               </ScrollReveal>
             </div>
+            
+            {/* Link al Manifiesto (Esquina inferior derecha) */}
+            <div className="absolute bottom-8 right-6 md:bottom-12 md:right-12 z-20">
+              <ScrollReveal delay={1.0}>
+                <Link 
+                  href="/manifiesto"
+                  className="relative inline-block text-[#888888] font-michroma text-[10px] md:text-xs tracking-widest pb-1 group transition-colors hover:text-white whitespace-nowrap"
+                >
+                  DOC.00 / MANIFIESTO
+                  <span className="absolute bottom-0 left-0 w-full h-[1px] bg-[#F5B700] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-700 ease-[0.76,0,0.24,1]"></span>
+                </Link>
+              </ScrollReveal>
+            </div>
           </section>
 
           {/* MARQUEE SEPARATOR */}
