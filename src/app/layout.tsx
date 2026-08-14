@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     siteName: 'espín',
     images: [
       {
-        url: '/og-espin.jpg',
+        url: '/og-espin-brutalist.jpg',
         width: 1200,
         height: 630,
         alt: 'espín - Alta Costura Tecnológica',
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'espín | Alta Costura Tecnológica',
     description: 'Transformamos infraestructuras obsoletas...',
-    images: ['/og-espin.jpg'],
+    images: ['/og-espin-brutalist.jpg'],
   },
   robots: {
     index: true,
