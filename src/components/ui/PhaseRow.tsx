@@ -17,7 +17,7 @@ export function PhaseRow({ phase }: { phase: { id: string, title: string, desc: 
       </motion.div>
       <div className="flex-1 mt-2 md:mt-0">
         <motion.h3 style={{ color: textColor }} className="font-michroma text-xl md:text-3xl uppercase tracking-widest mb-4 md:mb-6">{phase.title}</motion.h3>
-        <p className="font-inter font-light text-base md:text-2xl text-zinc-400 leading-relaxed max-w-3xl">{phase.desc}</p>
+        <p className="font-inter font-light text-lg md:text-2xl text-zinc-300 leading-relaxed max-w-3xl">{phase.desc}</p>
       </div>
     </motion.div>
   );

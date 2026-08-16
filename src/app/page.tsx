@@ -56,7 +56,7 @@ export default function EspinLanding() {
 
               <div className="overflow-hidden mb-12 md:mb-20 pt-4">
                 <ScrollReveal delay={0.3}>
-                  <p className="font-inter font-light text-zinc-400 text-lg md:text-2xl lg:text-3xl max-w-4xl leading-relaxed md:leading-tight tracking-tight">
+                  <p className="font-inter font-light text-zinc-300 text-xl md:text-2xl lg:text-3xl max-w-4xl leading-relaxed md:leading-tight tracking-tight">
                     Auditamos y reconstruimos infraestructuras <span className="text-[#F5B700]">obsoletas</span>. Transformamos negocios que pierden dinero en ecosistemas digitales de <span className="text-[#F5B700]">alto rendimiento</span>.
                   </p>
                 </ScrollReveal>
@@ -122,7 +122,7 @@ export default function EspinLanding() {
                 </div>
                 <div className="overflow-hidden pt-4 -mt-4">
                   <ScrollReveal delay={0.2}>
-                    <p className="font-inter font-light text-zinc-400 text-base md:text-xl">
+                    <p className="font-inter font-light text-zinc-300 text-lg md:text-xl">
                       No es un problema de <span className="text-[#F5B700]">diseño</span>. Es un fallo crítico de <span className="text-[#F5B700]">infraestructura</span>.
                     </p>
                   </ScrollReveal>
@@ -153,7 +153,7 @@ export default function EspinLanding() {
                       {p.title}
                     </h3>
                     
-                    <p className="font-inter font-light text-zinc-400 leading-relaxed mt-4 text-base md:text-lg lg:text-xl group-hover:text-black transition-colors duration-700 relative z-10">
+                    <p className="font-inter font-light text-zinc-300 leading-relaxed mt-4 text-lg md:text-xl lg:text-xl group-hover:text-black transition-colors duration-700 relative z-10">
                       {p.desc}
                     </p>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
@@ -233,7 +233,7 @@ export default function EspinLanding() {
                       {p.title}
                     </h3>
                     
-                    <p className="font-inter font-light leading-relaxed mt-4 text-base md:text-lg lg:text-xl transition-colors duration-700 relative z-10 text-zinc-400 group-hover:text-black">
+                    <p className="font-inter font-light leading-relaxed mt-4 text-lg md:text-xl lg:text-xl transition-colors duration-700 relative z-10 text-zinc-300 group-hover:text-black">
                       {p.desc}
                     </p>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
@@ -275,7 +275,7 @@ export default function EspinLanding() {
                     <h3 className="text-xl md:text-2xl text-white mb-4 uppercase font-michroma group-hover:translate-x-2 transition-transform duration-500">
                       Flota Marítima Comercial
                     </h3>
-                    <p className="font-inter font-light text-zinc-400 text-sm md:text-base leading-relaxed">
+                    <p className="font-inter font-light text-zinc-300 text-base md:text-lg leading-relaxed">
                       Reestructuración completa de arquitectura web y creación de pasarela de reservas inquebrantable.
                     </p>
                   </div>
@@ -320,7 +320,7 @@ export default function EspinLanding() {
                     <h3 className="text-xl md:text-2xl text-white mb-4 uppercase font-michroma group-hover:translate-x-2 transition-transform duration-500">
                       Red de Lavanderías
                     </h3>
-                    <p className="font-inter font-light text-zinc-400 text-sm md:text-base leading-relaxed">
+                    <p className="font-inter font-light text-zinc-300 text-base md:text-lg leading-relaxed">
                       Sustitución de procesos manuales por un ecosistema digital automatizado para clientes corporativos.
                     </p>
                   </div>
