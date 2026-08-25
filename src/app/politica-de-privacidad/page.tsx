@@ -13,7 +13,7 @@ export default function PoliticaPrivacidad() {
   return (
     <div className="min-h-screen bg-black">
       <LegalModalLayout>
-        <h1 className="font-michroma text-2xl md:text-4xl text-[#F5B700] uppercase tracking-tighter mb-8 relative z-10">
+ <h1 className="font-clash font-bold text-xl md:text-4xl text-[#F5B700] uppercase mb-8 relative z-10"> 
           POLÍTICA DE PRIVACIDAD
         </h1>
         
@@ -24,7 +24,7 @@ export default function PoliticaPrivacidad() {
         <div className="space-y-12 font-light text-zinc-300 leading-relaxed text-sm md:text-base relative z-10">
           
           <section>
-            <h2 className="font-michroma text-lg text-white mb-4 flex items-center gap-4">
+ <h2 className="font-clash font-semibold text-lg text-white mb-4 leading-[1.1] md:leading-[1.1] flex flex-col md:flex-row items-start md:items-center gap-1 md:gap-4"> 
               <span className="text-[#F5B700] text-sm">/01</span> RESPONSABLE DEL TRATAMIENTO
             </h2>
             <ul className="list-none space-y-2 pl-4 border-l border-zinc-800">
@@ -36,7 +36,7 @@ export default function PoliticaPrivacidad() {
           </section>
 
           <section>
-            <h2 className="font-michroma text-lg text-white mb-4 flex items-center gap-4">
+ <h2 className="font-clash font-semibold text-lg text-white mb-4 leading-[1.1] md:leading-[1.1] flex flex-col md:flex-row items-start md:items-center gap-1 md:gap-4"> 
               <span className="text-[#F5B700] text-sm">/02</span> FINALIDAD DEL TRATAMIENTO DE DATOS
             </h2>
             <p className="mb-4">
@@ -54,7 +54,7 @@ export default function PoliticaPrivacidad() {
           </section>
 
           <section>
-            <h2 className="font-michroma text-lg text-white mb-4 flex items-center gap-4">
+ <h2 className="font-clash font-semibold text-lg text-white mb-4 leading-[1.1] md:leading-[1.1] flex flex-col md:flex-row items-start md:items-center gap-1 md:gap-4"> 
               <span className="text-[#F5B700] text-sm">/03</span> LEGITIMACIÓN
             </h2>
             <p className="mb-4">
@@ -68,7 +68,7 @@ export default function PoliticaPrivacidad() {
           </section>
 
           <section>
-            <h2 className="font-michroma text-lg text-white mb-4 flex items-center gap-4">
+ <h2 className="font-clash font-semibold text-lg text-white mb-4 leading-[1.1] md:leading-[1.1] flex flex-col md:flex-row items-start md:items-center gap-1 md:gap-4"> 
               <span className="text-[#F5B700] text-sm">/04</span> CONSERVACIÓN DE LOS DATOS
             </h2>
             <p>
@@ -77,7 +77,7 @@ export default function PoliticaPrivacidad() {
           </section>
 
           <section>
-            <h2 className="font-michroma text-lg text-white mb-4 flex items-center gap-4">
+ <h2 className="font-clash font-semibold text-lg text-white mb-4 leading-[1.1] md:leading-[1.1] flex flex-col md:flex-row items-start md:items-center gap-1 md:gap-4"> 
               <span className="text-[#F5B700] text-sm">/05</span> COMUNICACIÓN Y TRANSFERENCIA DE DATOS
             </h2>
             <p className="mb-4">
@@ -89,7 +89,7 @@ export default function PoliticaPrivacidad() {
           </section>
 
           <section>
-            <h2 className="font-michroma text-lg text-white mb-4 flex items-center gap-4">
+ <h2 className="font-clash font-semibold text-lg text-white mb-4 leading-[1.1] md:leading-[1.1] flex flex-col md:flex-row items-start md:items-center gap-1 md:gap-4"> 
               <span className="text-[#F5B700] text-sm">/06</span> DERECHOS DEL USUARIO
             </h2>
             <p className="mb-4">

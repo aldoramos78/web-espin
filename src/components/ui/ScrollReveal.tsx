@@ -13,10 +13,25 @@ export function ScrollReveal({
 }: { 
   children: React.ReactNode, 
   className?: string, 
-  variant?: "fadeUp" | "stagger" | "textReveal",
+  variant?: "fadeUp" | "stagger" | "textReveal" | "slideRight",
   delay?: number,
   style?: React.CSSProperties
 }) {
+  
+  if (variant === "slideRight") {
+    return (
+      <motion.div
+        initial={{ opacity: 0, x: -60 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 1, ease: easePremium, delay }}
+        className={className}
+        style={style}
+      >
+        {children}
+      </motion.div>
+    );
+  }
   if (variant === "stagger") {
     return (
       <motion.div 

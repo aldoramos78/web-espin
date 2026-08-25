@@ -81,13 +81,13 @@ export function ContactModal({ isOpen, onClose }: { isOpen: boolean, onClose: ()
             {status === "success" ? (
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="py-16 md:py-24 text-center flex flex-col items-center justify-center">
                 <div className="w-20 h-20 md:w-24 md:h-24 border border-[#F5B700] rounded-full mx-auto mb-8 md:mb-10 flex items-center justify-center text-[#F5B700] text-3xl md:text-4xl">✓</div>
-                <h3 className="font-michroma text-2xl md:text-4xl text-white uppercase tracking-widest mb-6">Solicitud Recibida</h3>
+ <h3 className="font-clash font-semibold text-2xl md:text-4xl text-white uppercase mb-6">Solicitud Recibida</h3> 
                 <p className="text-zinc-400 font-light text-base md:text-lg max-w-md mx-auto">Nuestro equipo analizará tu consulta y te contactará en las próximas 24h.</p>
               </motion.div>
             ) : (
               <>
                 <div className="mb-10 md:mb-14">
-                  <h2 className="font-michroma text-2xl md:text-3xl uppercase tracking-tighter text-white mb-4">
+ <h2 className="font-clash font-semibold text-2xl md:text-3xl uppercase text-white mb-4"> 
                     Solicitud de Auditoría<span className="text-[#F5B700]">.</span>
                   </h2>
                   <p className="font-inter text-zinc-500 text-xs md:text-sm tracking-wide leading-relaxed max-w-lg italic">
@@ -111,7 +111,7 @@ export function ContactModal({ isOpen, onClose }: { isOpen: boolean, onClose: ()
 
                 <button type="submit" disabled={status === "loading"} className="group relative w-full bg-[#F5B700] text-black py-5 md:py-6 mt-4 overflow-hidden disabled:opacity-50 transition-transform duration-500 hover:scale-[1.01] border border-[#F5B700]">
                   <div className="absolute inset-0 bg-white transform scale-y-0 origin-bottom group-hover:scale-y-100 transition-transform duration-700 ease-[0.16,1,0.3,1] z-0"></div>
-                  <span className="relative z-10 font-michroma text-xs md:text-sm uppercase tracking-widest font-bold">
+ <span className="relative z-10 font-clash font-semibold text-xs md:text-sm uppercase font-bold"> 
                     {status === "loading" ? "Procesando..." : status === "error" ? "Error - Reintentar" : "Enviar Solicitud"}
                   </span>
                 </button>

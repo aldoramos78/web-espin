@@ -140,7 +140,7 @@ export function HeroBackground() {
                  <g className="hidden md:block">
                    <rect x="42%" y="60%" width="260" height="220" fill="rgba(0,0,0,0.5)" stroke="rgba(255,255,255,0.3)"/>
                    <line x1="42%" y1="66%" x2="calc(42% + 260px)" y2="66%" stroke="rgba(255,255,255,0.3)"/>
-                   <text x="44%" y="64%" fill="#F5B700" stroke="none" className="text-xs font-bold font-michroma">CORE_LEDGER_DB</text>
+ <text x="44%" y="64%" fill="#F5B700" stroke="none" className="text-xs font-bold font-clash font-semibold">CORE_LEDGER_DB</text> 
                    <text x="44%" y="71%" fill="currentColor" stroke="none">id: UUID (PK)</text>
                    <text x="44%" y="74%" fill="currentColor" stroke="none">client_ref: VARCHAR(255)</text>
                    <text x="44%" y="77%" fill="currentColor" stroke="none">obsolescence_score: FLOAT</text>

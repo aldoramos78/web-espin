@@ -5,21 +5,21 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Aviso Legal | espín",
-  description: "Aviso Legal y Condiciones de Uso de Espín Labs.",
+  description: "Aviso Legal de Espín Labs.",
   robots: { index: false, follow: true },
 };
 
 export default function AvisoLegal() {
   return (
     <LegalModalLayout>
-      <h1 className="font-michroma text-2xl md:text-4xl text-[#F5B700] uppercase tracking-tighter mb-12 relative z-10">
-        AVISO LEGAL Y CONDICIONES DE USO
+ <h1 className="font-clash font-bold text-xl md:text-4xl text-[#F5B700] uppercase mb-12 relative z-10"> 
+        AVISO LEGAL
       </h1>
 
       <div className="space-y-12 font-light text-zinc-300 leading-relaxed text-sm md:text-base relative z-10">
         
         <section>
-          <h2 className="font-michroma text-lg text-white mb-4 flex items-center gap-4">
+ <h2 className="font-clash font-semibold text-lg text-white mb-4 leading-[1.1] md:leading-[1.1] flex flex-col md:flex-row items-start md:items-center gap-1 md:gap-4"> 
             <span className="text-[#F5B700] text-sm">/01</span> DATOS IDENTIFICATIVOS
           </h2>
           <p className="mb-4">
@@ -35,7 +35,7 @@ export default function AvisoLegal() {
         </section>
 
         <section>
-          <h2 className="font-michroma text-lg text-white mb-4 flex items-center gap-4">
+ <h2 className="font-clash font-semibold text-lg text-white mb-4 leading-[1.1] md:leading-[1.1] flex flex-col md:flex-row items-start md:items-center gap-1 md:gap-4"> 
             <span className="text-[#F5B700] text-sm">/02</span> OBJETO Y ÁMBITO DE APLICACIÓN
           </h2>
           <p className="mb-4">
@@ -47,7 +47,7 @@ export default function AvisoLegal() {
         </section>
 
         <section>
-          <h2 className="font-michroma text-lg text-white mb-4 flex items-center gap-4">
+ <h2 className="font-clash font-semibold text-lg text-white mb-4 leading-[1.1] md:leading-[1.1] flex flex-col md:flex-row items-start md:items-center gap-1 md:gap-4"> 
             <span className="text-[#F5B700] text-sm">/03</span> PROPIEDAD INTELECTUAL E INDUSTRIAL
           </h2>
           <p className="mb-4">
@@ -59,7 +59,7 @@ export default function AvisoLegal() {
         </section>
 
         <section>
-          <h2 className="font-michroma text-lg text-white mb-4 flex items-center gap-4">
+ <h2 className="font-clash font-semibold text-lg text-white mb-4 leading-[1.1] md:leading-[1.1] flex flex-col md:flex-row items-start md:items-center gap-1 md:gap-4"> 
             <span className="text-[#F5B700] text-sm">/04</span> EXCLUSIÓN DE GARANTÍAS Y RESPONSABILIDAD
           </h2>
           <p className="mb-4">
@@ -79,7 +79,7 @@ export default function AvisoLegal() {
         </section>
 
         <section>
-          <h2 className="font-michroma text-lg text-white mb-4 flex items-center gap-4">
+ <h2 className="font-clash font-semibold text-lg text-white mb-4 leading-[1.1] md:leading-[1.1] flex flex-col md:flex-row items-start md:items-center gap-1 md:gap-4"> 
             <span className="text-[#F5B700] text-sm">/05</span> LEGISLACIÓN APLICABLE Y JURISDICCIÓN
           </h2>
           <p>

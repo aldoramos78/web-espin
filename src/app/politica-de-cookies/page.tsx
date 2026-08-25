@@ -13,7 +13,7 @@ export default function PoliticaCookies() {
   return (
     <div className="min-h-screen bg-black">
       <LegalModalLayout>
-        <h1 className="font-michroma text-2xl md:text-4xl text-[#F5B700] uppercase tracking-tighter mb-8 relative z-10">
+ <h1 className="font-clash font-bold text-xl md:text-4xl text-[#F5B700] uppercase mb-8 relative z-10"> 
           POLÍTICA DE COOKIES
         </h1>
         
@@ -26,7 +26,7 @@ export default function PoliticaCookies() {
         <div className="space-y-12 font-light text-zinc-300 leading-relaxed text-sm md:text-base relative z-10">
           
           <section>
-            <h2 className="font-michroma text-lg text-white mb-4 flex items-center gap-4">
+ <h2 className="font-clash font-semibold text-lg text-white mb-4 leading-[1.1] md:leading-[1.1] flex flex-col md:flex-row items-start md:items-center gap-1 md:gap-4"> 
               <span className="text-[#F5B700] text-sm">/01</span> ¿QUÉ ES UNA COOKIE?
             </h2>
             <p>
@@ -35,7 +35,7 @@ export default function PoliticaCookies() {
           </section>
 
           <section>
-            <h2 className="font-michroma text-lg text-white mb-4 flex items-center gap-4">
+ <h2 className="font-clash font-semibold text-lg text-white mb-4 leading-[1.1] md:leading-[1.1] flex flex-col md:flex-row items-start md:items-center gap-1 md:gap-4"> 
               <span className="text-[#F5B700] text-sm">/02</span> TIPOLOGÍA DE COOKIES QUE UTILIZAMOS
             </h2>
             <p className="mb-4">
@@ -58,7 +58,7 @@ export default function PoliticaCookies() {
           </section>
 
           <section>
-            <h2 className="font-michroma text-lg text-white mb-4 flex items-center gap-4">
+ <h2 className="font-clash font-semibold text-lg text-white mb-4 leading-[1.1] md:leading-[1.1] flex flex-col md:flex-row items-start md:items-center gap-1 md:gap-4"> 
               <span className="text-[#F5B700] text-sm">/03</span> COOKIES DE TERCEROS
             </h2>
             <p>
@@ -67,7 +67,7 @@ export default function PoliticaCookies() {
           </section>
 
           <section>
-            <h2 className="font-michroma text-lg text-white mb-4 flex items-center gap-4">
+ <h2 className="font-clash font-semibold text-lg text-white mb-4 leading-[1.1] md:leading-[1.1] flex flex-col md:flex-row items-start md:items-center gap-1 md:gap-4"> 
               <span className="text-[#F5B700] text-sm">/04</span> CONTROL Y DESTRUCCIÓN DE COOKIES
             </h2>
             <p className="mb-4">
@@ -86,7 +86,7 @@ export default function PoliticaCookies() {
           </section>
 
           <section>
-            <h2 className="font-michroma text-lg text-white mb-4 flex items-center gap-4">
+ <h2 className="font-clash font-semibold text-lg text-white mb-4 leading-[1.1] md:leading-[1.1] flex flex-col md:flex-row items-start md:items-center gap-1 md:gap-4"> 
               <span className="text-[#F5B700] text-sm">/05</span> ACTUALIZACIONES DE ESTA POLÍTICA
             </h2>
             <p className="mb-4">

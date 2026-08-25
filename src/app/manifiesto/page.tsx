@@ -6,7 +6,7 @@ export default function Manifiesto() {
     <div className="mb-16 md:mb-24">
       <Link 
         href="/"
-        className="group inline-flex items-center gap-3 text-[#888888] hover:text-[#F5B700] transition-colors duration-300 font-michroma text-xs tracking-widest uppercase"
+ className="group inline-flex items-center gap-3 text-[#888888] hover:text-[#F5B700] transition-colors duration-300 font-clash font-semibold text-xs uppercase" 
       >
         <span className="relative flex items-center justify-center w-8 h-8 border border-[#222222] group-hover:border-[#F5B700] transition-colors duration-300">
           <svg className="w-4 h-4 transform group-hover:-translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -37,13 +37,13 @@ export default function Manifiesto() {
         <BackButton />
 
         {/* --- CABECERA --- */}
-        <div className="flex flex-col md:flex-row justify-between md:items-center mb-32 md:mb-40 relative">
+        <div className="leading-[1.1] md:leading-[1.1] flex flex-col md:flex-row justify-between md:items-center mb-32 md:mb-40 relative">
           <div className="md:w-7/12">
-            <div className="mb-8 font-inter font-thin tracking-widest text-[#888888] text-xs md:text-sm uppercase flex items-center gap-4">
+            <div className="mb-8 font-inter font-thin tracking-widest text-[#888888] text-xs md:text-sm uppercase leading-[1.1] md:leading-[1.1] flex flex-col md:flex-row items-start md:items-center gap-1 md:gap-4">
               [ DOC.00 / DOCTRINA OPERATIVA ]
               <span className="hidden md:block w-12 h-[1px] bg-[#333333]"></span>
             </div>
-            <h1 className="font-michroma text-4xl md:text-6xl lg:text-7xl text-[#FFFFFF] leading-[1.1] mb-8">
+ <h1 className="font-clash font-bold text-4xl md:text-6xl lg:text-7xl text-[#FFFFFF] mb-8"> 
               EL <span className="text-[#F5B700]">LUJO</span> ES LA<br />
               AUSENCIA DE <span className="text-[#F5B700]">RUIDO.</span>
             </h1>
@@ -52,7 +52,7 @@ export default function Manifiesto() {
             </p>
           </div>
           
-          <div className="md:w-4/12 flex flex-col md:border-l md:border-[#222222] md:pl-10 relative">
+          <div className="md:w-4/12 leading-[1.1] md:leading-[1.1] flex flex-col md:border-l md:border-[#222222] md:pl-10 relative">
             <div className="hidden md:block absolute -left-[1px] top-1/2 -translate-y-1/2 w-[1px] h-24 bg-[#F5B700]/40"></div>
             <p className="text-base md:text-lg leading-relaxed mb-6 font-thin text-[#FFFFFF]">
               No somos una agencia creativa. Somos una consultora de infraestructura tecnológica. Nuestro trabajo consiste en auditar sistemas lentos, ineficientes y desfasados, para reconstruirlos con la precisión de un bisturí.
@@ -69,7 +69,7 @@ export default function Manifiesto() {
           {/* Bloque 1 */}
           <section className="md:col-span-5 md:col-start-1 relative md:mt-0">
             <div className="hidden md:block absolute -left-6 top-2 w-[2px] h-8 bg-[#F5B700]/50"></div>
-            <h2 className="font-michroma text-xl md:text-2xl text-[#FFFFFF] mb-6">
+ <h2 className="font-clash font-semibold text-xl md:text-2xl text-[#FFFFFF] mb-6"> 
               LA <span className="text-[#F5B700]">REGLA</span> DEL VACÍO
               <span className="text-[#888888] text-xs md:text-sm tracking-widest font-inter font-thin mt-2 block">[ NUESTRO CÓDIGO CROMÁTICO ]</span>
             </h2>
@@ -84,7 +84,7 @@ export default function Manifiesto() {
           {/* Bloque 2 */}
           <section className="md:col-span-5 md:col-start-8 relative md:mt-40">
             <div className="hidden md:block absolute -left-6 top-2 w-[2px] h-8 bg-[#F5B700]/50"></div>
-            <h2 className="font-michroma text-xl md:text-2xl text-[#FFFFFF] mb-6">
+ <h2 className="font-clash font-semibold text-xl md:text-2xl text-[#FFFFFF] mb-6"> 
               <span className="text-[#F5B700]">JUNTOS</span>, PERO NO REVUELTOS
               <span className="text-[#888888] text-xs md:text-sm tracking-widest font-inter font-thin mt-2 block">[ EL ISOTIPO ]</span>
             </h2>
@@ -99,12 +99,12 @@ export default function Manifiesto() {
           {/* Bloque 3 */}
           <section className="md:col-span-6 md:col-start-3 relative md:mt-32">
             <div className="hidden md:block absolute -left-6 top-2 w-[2px] h-8 bg-[#F5B700]/50"></div>
-            <h2 className="font-michroma text-xl md:text-2xl text-[#FFFFFF] mb-6">
+ <h2 className="font-clash font-semibold text-xl md:text-2xl text-[#FFFFFF] mb-6"> 
               <span className="text-[#F5B700]">ARQUITECTURA</span> ANTES QUE ESTÉTICA
               <span className="text-[#888888] text-xs md:text-sm tracking-widest font-inter font-thin mt-2 block">[ LA TIPOGRAFÍA ]</span>
             </h2>
             <p className="text-base md:text-lg leading-relaxed mb-6 font-thin text-[#FFFFFF]">
-              Solo operamos con dos fuentes porque no necesitamos más para establecer jerarquía. Utilizamos <span className="font-michroma text-[10px] md:text-xs text-[#CCCCCC]">MICHROMA</span> para nuestros titulares no porque sea estética, sino porque su geometría extendida y fría funciona como el plano técnico de un edificio. Transmite orden de un solo vistazo.
+ Solo operamos con dos fuentes porque no necesitamos más para establecer jerarquía. Utilizamos <span className="font-clash font-semibold text-[10px] md:text-xs text-[#CCCCCC]">CLASH DISPLAY</span> para nuestros titulares no porque sea estética, sino porque su geometría brutalista y precisa funciona como el plano técnico de un edificio. Transmite orden de un solo vistazo. 
             </p>
             <p className="text-base md:text-lg leading-relaxed font-thin text-[#FFFFFF]">
               Para el cuerpo de texto, donde tú necesitas comprender lo que hacemos, liberamos la familia Inter: neutra, implacable y diseñada para leerse en pantallas de alto rendimiento sin cansar el ojo humano.
@@ -120,7 +120,7 @@ export default function Manifiesto() {
 
         {/* --- CIERRE (ALARGADO Y SOLO) --- */}
         <section className="w-full">
-          <div className="p-8 md:p-16 border border-[#222222] hover:border-[#F5B700]/40 transition-colors duration-500 bg-[#0F0F0F] relative group flex flex-col md:flex-row md:items-center justify-between gap-8 md:gap-16">
+          <div className="p-8 md:p-16 border border-[#222222] hover:border-[#F5B700]/40 transition-colors duration-500 bg-[#0F0F0F] relative group leading-[1.1] md:leading-[1.1] flex flex-col md:flex-row md:items-center justify-between gap-8 md:gap-16">
             
             {/* Artefactos de esquina */}
             <div className="absolute top-0 left-0 w-2 h-2 bg-[#F5B700]"></div>
@@ -130,7 +130,7 @@ export default function Manifiesto() {
             <div className="absolute -bottom-[1px] left-8 w-12 h-[1px] bg-[#F5B700]/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
             <div className="md:w-5/12 lg:w-1/3">
-              <h2 className="font-michroma text-xl md:text-3xl lg:text-4xl text-[#F5B700] leading-tight">
+ <h2 className="font-clash font-semibold text-xl md:text-3xl lg:text-4xl text-[#F5B700]"> 
                 ALTA COSTURA TECNOLÓGICA
               </h2>
             </div>

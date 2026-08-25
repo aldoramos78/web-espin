@@ -1,16 +1,34 @@
 import type { Metadata } from "next";
-import { Michroma, Inter } from "next/font/google";
+import localFont from "next/font/local";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-const michroma = Michroma({ 
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font-michroma" 
+const clashDisplay = localFont({
+  src: [
+    {
+      path: "../../public/fonts/ClashDisplay-Light.woff2",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/ClashDisplay-Medium.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/ClashDisplay-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+ variable: "--font-clash",
+  display: "swap",
 });
 
 const inter = Inter({ 
   subsets: ["latin"], 
-  variable: "--font-inter" 
+  variable: "--font-inter",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -24,7 +42,7 @@ export const metadata: Metadata = {
     siteName: 'espín',
     images: [
       {
-        url: '/og-espin-hero.jpg',
+        url: '/og-espin.jpg',
         width: 1200,
         height: 630,
         alt: 'espín - Alta Costura Tecnológica',
@@ -37,7 +55,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'espín | Alta Costura Tecnológica',
     description: 'Transformamos infraestructuras obsoletas...',
-    images: ['/og-espin-hero.jpg'],
+    images: ['/og-espin.jpg'],
   },
   robots: {
     index: true,
@@ -58,8 +76,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className="scroll-smooth bg-black">
-      <body className={`${michroma.variable} ${inter.variable} antialiased bg-black`}>
+    <html lang="es" className="bg-black">
+      <body className={`${clashDisplay.variable} ${inter.variable} antialiased bg-black`}>
         {children}
       </body>
     </html>
