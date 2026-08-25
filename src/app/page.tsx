@@ -125,12 +125,14 @@ export default function EspinLanding() {
 
               {/* Text Content (w-7/12 on md, matching the 'Agentes' layout since we want text on the left) */}
               <div className="w-full md:w-7/12 flex flex-col relative z-20 items-start text-left">
-                <h3 className="font-clash font-semibold text-4xl sm:text-5xl md:text-5xl lg:text-6xl uppercase mb-6 text-black transition-colors duration-500">
-                  ECOSISTEMA<br/>COMPLETO
-                </h3>
-                <p className="font-inter font-light text-lg md:text-2xl text-black leading-relaxed max-w-3xl">
-                  Identidad visual, plataforma web y automatización con IA. Delegas toda la modernización de tu empresa en un solo equipo para liderar tu mercado desde el primer día.
-                </p>
+                <Link href="/ecosistema" className="group/link block cursor-pointer">
+                  <h3 className="font-clash font-semibold text-4xl sm:text-5xl md:text-5xl lg:text-6xl uppercase mb-6 text-black transition-colors duration-500 group-hover/link:opacity-80">
+                    ECOSISTEMA<br/>COMPLETO
+                  </h3>
+                  <p className="font-inter font-light text-lg md:text-2xl text-black leading-relaxed max-w-3xl group-hover/link:opacity-80 transition-opacity">
+                    Identidad visual, plataforma web y automatización con IA. Delegas toda la modernización de tu empresa en un solo equipo para liderar tu mercado desde el primer día.
+                  </p>
+                </Link>
                 <div className="mt-8 z-30 pointer-events-auto">
                   <ContactTrigger className="inline-block cursor-pointer">
                     <button type="button" className="rings-btn black group/btn">
