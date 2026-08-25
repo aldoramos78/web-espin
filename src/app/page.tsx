@@ -11,7 +11,7 @@ export default function EspinLanding() {
   const homeServices = [
     { 
       id: "01", 
-      title: "Desarrollo de Alto Rendimiento", 
+      title: "Desarrollo Web de Alto Rendimiento", 
       desc: "Sistemas estáticos pierden dinero a cada segundo. Desplegamos infraestructuras web y aplicaciones ultrarrápidas, escalables y diseñadas exclusivamente para liderar tu mercado.", 
       link: "/desarrollo",
       align: "right",
