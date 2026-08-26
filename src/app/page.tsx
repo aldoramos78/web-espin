@@ -5,6 +5,7 @@ import { HomeServiceBlock } from "@/components/ui/HomeServiceBlock";
 import { HeaderAndModal } from "@/components/ui/HeaderAndModal";
 import { PreloaderManager } from "@/components/ui/PreloaderManager";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { Counter } from "@/components/ui/Counter";
 import { ContactTrigger } from "@/components/ui/ContactTrigger";
 
 export default function EspinLanding() {
@@ -162,7 +163,124 @@ export default function EspinLanding() {
             </div>
           </section>
 
-</main>
+
+          {/* 5. CASOS / RESULTADOS SECTION (Migrado para AEO) */}
+          <section id="casos" className="px-0 md:px-12 pt-16 pb-16 md:pt-24 md:pb-32 bg-black border-b border-zinc-900">
+            <ScrollReveal variant="stagger" className="w-full px-6 md:px-0">
+              <div className="w-full md:w-[80%]">
+                <div className="mb-10 md:mb-16 w-full">
+                  <ScrollReveal variant="slideRight">
+                    <div className="flex items-center gap-3 md:gap-4">
+                      <div className="w-8 md:w-16 h-[2px] bg-[#F5B700] shrink-0"></div>
+ <h2 className="font-clash font-light text-[4vw] sm:text-lg md:text-2xl lg:text-3xl text-[#F5B700] uppercase whitespace-nowrap"> 
+                        LA PRUEBA DEL RENDIMIENTO
+                      </h2>
+                    </div>
+                  </ScrollReveal>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal variant="stagger" className="w-full px-6 md:px-0">
+              {/* Grid de Resultados */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 relative">
+                {/* Línea divisoria central (solo en desktop) */}
+                <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-[1px] bg-zinc-900 -translate-x-1/2"></div>
+
+                {/* TARJETA 1: FLOTA MARÍTIMA */}
+                <ScrollReveal className="leading-[1.1] md:leading-[1.1] flex flex-col pr-0 md:pr-12 group">
+                  {/* Contexto */}
+                  <div className="mb-12">
+                    <span className="text-[#F5B700] text-[10px] md:text-xs font-mono tracking-widest uppercase mb-4 block">
+                      Sector Tradicional
+                    </span>
+ <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white mb-6 uppercase font-clash font-semibold group-hover:translate-x-2 transition-transform duration-500"> 
+                      Flota Marítima Comercial
+                    </h3>
+                    <p className="font-inter font-normal text-zinc-400 text-base md:text-lg leading-relaxed">
+                      Reestructuración completa de arquitectura web y creación de pasarela de reservas inquebrantable.
+                    </p>
+                  </div>
+
+                  {/* La Métrica Dominante */}
+                  <div className="mb-12 border-l border-[#F5B700] pl-6 py-2">
+ <div className="text-6xl md:text-7xl text-white mb-2 font-clash font-semibold flex items-baseline"> 
+                      <Counter from={0} to={99.9} decimals={1} />
+                      <span className="text-[#F5B700] text-6xl md:text-7xl ml-1 font-inter tracking-normal">
+                        %
+                      </span>
+                    </div>
+                    <div className="text-zinc-500 text-[10px] md:text-xs font-mono uppercase tracking-widest">
+                      RESPUESTA INMEDIATA
+                    </div>
+                  </div>
+
+                  {/* Impacto Verificado */}
+                  <div className="mt-auto">
+                    <div className="h-[1px] w-full bg-zinc-900 mb-8"></div>
+                    <span className="text-[#F5B700] text-[10px] md:text-xs font-mono tracking-widest uppercase mb-6 block">
+                      Impacto Verificado
+                    </span>
+                    <ul className="space-y-4 font-inter font-normal">
+                      {["Retención absoluta de leads comerciales en cualquier franja horaria.", "Aumento del 40% en cierre de reservas sin intervención humana.", "Eliminación de cuellos de botella durante picos de demanda."].map((item, idx) => (
+                        <li key={idx} className="flex items-start text-zinc-400 text-sm">
+                          <svg aria-hidden="true" className="w-4 h-4 text-[#F5B700] mr-4 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </ScrollReveal>
+
+                {/* TARJETA 2: RED DE LAVANDERÍAS */}
+                <ScrollReveal className="leading-[1.1] md:leading-[1.1] flex flex-col pl-0 md:pl-12 mt-8 md:mt-0 group">
+                  {/* Contexto */}
+                  <div className="mb-12">
+                    <span className="text-[#F5B700] text-[10px] md:text-xs font-mono tracking-widest uppercase mb-4 block">
+                      Sector Servicios B2B
+                    </span>
+ <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white mb-6 uppercase font-clash font-semibold group-hover:translate-x-2 transition-transform duration-500"> 
+                      Operativa Interna
+                    </h3>
+                    <p className="font-inter font-normal text-zinc-400 text-base md:text-lg leading-relaxed">
+                      Automatización de flujos de trabajo y tareas administrativas.
+                    </p>
+                  </div>
+
+                  {/* La Métrica Dominante */}
+                  <div className="mb-12 border-l border-[#F5B700] pl-6 py-2">
+ <div className="text-6xl md:text-7xl text-white mb-2 font-clash font-semibold flex items-baseline"> 
+                      <Counter from={0} to={-80} decimals={0} />
+                      <span className="text-[#F5B700] text-6xl md:text-7xl ml-1 font-inter tracking-normal">
+                        %
+                      </span>
+                    </div>
+                    <div className="text-zinc-500 text-[10px] md:text-xs font-mono uppercase tracking-widest">
+                      REDUCCIÓN DE CARGA ADMINISTRATIVA
+                    </div>
+                  </div>
+
+                  {/* Impacto Verificado */}
+                  <div className="mt-auto">
+                    <div className="h-[1px] w-full bg-zinc-900 mb-8"></div>
+                    <span className="text-[#F5B700] text-[10px] md:text-xs font-mono tracking-widest uppercase mb-6 block">
+                      Impacto Verificado
+                    </span>
+                    <ul className="space-y-4 font-inter font-normal">
+                      {["Tu equipo vuelve a centrarse en tareas que generan ingresos reales.", "Sincronización automática de bases de datos y facturación al instante.", "Reducción de errores mecánicos a cero en flujos logísticos recurrentes."].map((item, idx) => (
+                        <li key={idx} className="flex items-start text-zinc-400 text-sm">
+                          <svg aria-hidden="true" className="w-4 h-4 text-[#F5B700] mr-4 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </ScrollReveal>
+              </div>
+            </ScrollReveal>
+          </section>
+
+        </main>
 
           {/* MARQUEE SEPARATOR */}
           <div className="marquee-container py-8 md:py-12 overflow-hidden bg-black border-y border-zinc-900">
