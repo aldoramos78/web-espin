@@ -1,6 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Manifiesto y Doctrina | espín',
+  description: 'Descubre nuestra doctrina basada en el brutalismo digital: disponibilidad absoluta, precisión milimétrica y escalabilidad inmediata.',
+};
+
+
 export default function Manifiesto() {
   const BackButton = () => (
     <div className="mb-16 md:mb-24">
