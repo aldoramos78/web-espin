@@ -94,6 +94,16 @@ const jsonLd = {
       "@type": "Service",
       "name": "Creación de Marca e Identidad Digital (Branding)"
     }
+  ],
+  "areaServed": "ES",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "contacto@espinlabs.com",
+    "contactType": "Consulting"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/company/espinlabs",
+    "https://x.com/espinlabs"
   ]
 };
 
