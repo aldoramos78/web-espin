@@ -56,17 +56,17 @@ export default function Manifiesto() {
               AUSENCIA DE <span className="text-[#F5B700]">RUIDO.</span>
             </h1>
             <p className="text-xl md:text-2xl font-inter font-extralight text-[#CCCCCC] leading-relaxed mb-12 md:mb-0">
-              Por qué espín se ve, se lee y opera como lo hace.
+              La doctrina operativa que separa a las infraestructuras de alto rendimiento del software mediocre.
             </p>
           </div>
           
           <div className="md:w-4/12 leading-[1.1] md:leading-[1.1] flex flex-col md:border-l md:border-[#222222] md:pl-10 relative">
             <div className="hidden md:block absolute -left-[1px] top-1/2 -translate-y-1/2 w-[1px] h-24 bg-[#F5B700]/40"></div>
             <p className="text-base md:text-lg leading-relaxed mb-6 font-thin text-[#FFFFFF]">
-              No somos una agencia creativa. Somos una consultora de infraestructura tecnológica. Nuestro trabajo consiste en auditar sistemas lentos, ineficientes y desfasados, para reconstruirlos con la precisión de un bisturí.
+              No somos una agencia creativa ni una factoría de software al peso. Somos arquitectos de ecosistemas digitales. Auditamos infraestructuras corporativas lentas, ineficientes y desfasadas, para reconstruirlas con la precisión clínica de un bisturí.
             </p>
             <p className="text-base md:text-lg leading-relaxed font-thin text-[#FFFFFF]">
-              Esa obsesión por erradicar lo innecesario en el código de nuestros clientes es exactamente la misma que rige nuestra propia marca. No hay adornos. No hay colores de relleno. No hay ruido.
+              Esta obsesión por erradicar el código inútil y los procesos manuales en nuestros clientes es la que rige nuestra propia doctrina. No hacemos parches. No usamos plantillas. No hay ruido. Solo construimos cimientos definitivos.
             </p>
           </div>
         </div>
@@ -77,45 +77,45 @@ export default function Manifiesto() {
           {/* Bloque 1 */}
           <section className="md:col-span-5 md:col-start-1 relative md:mt-0">
             <div className="hidden md:block absolute -left-6 top-2 w-[2px] h-8 bg-[#F5B700]/50"></div>
- <h2 className="font-clash font-semibold text-xl md:text-2xl text-[#FFFFFF] mb-6"> 
+ <h2 className="font-clash font-semibold text-3xl md:text-4xl lg:text-5xl text-[#FFFFFF] mb-8 leading-[1.1]"> 
               LA <span className="text-[#F5B700]">REGLA</span> DEL VACÍO
-              <span className="text-[#888888] text-xs md:text-sm tracking-widest font-inter font-thin mt-2 block">[ NUESTRO CÓDIGO CROMÁTICO ]</span>
+              <span className="text-[#FFFFFF] text-xs md:text-sm tracking-widest font-inter font-thin mt-4 block opacity-90">[ NUESTRA DOCTRINA OPERATIVA ]</span>
             </h2>
             <p className="text-base md:text-lg leading-relaxed mb-6 font-thin text-[#FFFFFF]">
-              El 90% de nuestro entorno opera en un negro absoluto. En la mayoría de las agencias, el color se utiliza para compensar la falta de contenido o para distraer. Nosotros usamos el vacío como herramienta arquitectónica. El negro no compite con la información, la aísla. El blanco puro es la única voz permitida sobre ese vacío.
+              El 90% de nuestro entorno opera en un negro absoluto. Mientras la industria tecnológica utiliza colores y adornos para ocultar la falta de rendimiento y el código basura, nosotros usamos el vacío como herramienta arquitectónica. El negro aísla la información crítica. El blanco impone la jerarquía.
             </p>
             <p className="text-base md:text-lg leading-relaxed font-thin text-[#FFFFFF]">
-              Nuestro único acento, el amarillo industrial (#F5B700), funciona como una luz forense: no rellena espacios, solo ilumina los datos críticos o las acciones que generan negocio.
+              Nuestro único acento, el amarillo industrial (#F5B700), funciona como un láser forense: no rellena espacios, solo ilumina los datos críticos y los cuellos de botella que te están haciendo perder dinero.
             </p>
           </section>
 
           {/* Bloque 2 */}
           <section className="md:col-span-5 md:col-start-8 relative md:mt-40">
             <div className="hidden md:block absolute -left-6 top-2 w-[2px] h-8 bg-[#F5B700]/50"></div>
- <h2 className="font-clash font-semibold text-xl md:text-2xl text-[#FFFFFF] mb-6"> 
-              <span className="text-[#F5B700]">JUNTOS</span>, PERO NO REVUELTOS
-              <span className="text-[#888888] text-xs md:text-sm tracking-widest font-inter font-thin mt-2 block">[ EL ISOTIPO ]</span>
+ <h2 className="font-clash font-semibold text-3xl md:text-4xl lg:text-5xl text-[#FFFFFF] mb-8 leading-[1.1]"> 
+              <span className="text-[#F5B700]">MÁQUINA</span> Y CRITERIO
+              <span className="text-[#FFFFFF] text-xs md:text-sm tracking-widest font-inter font-thin mt-4 block opacity-90">[ EL ISOTIPO ]</span>
             </h2>
             <p className="text-base md:text-lg leading-relaxed mb-6 font-thin text-[#FFFFFF]">
               El símbolo de espín —nuestra 'e' minúscula atravesada por una cuña amarilla— no es un capricho geométrico. Genera un corte en espacio negativo que separa visualmente dos masas dentro de la misma forma.
             </p>
             <p className="text-base md:text-lg leading-relaxed font-thin text-[#FFFFFF]">
-              Representa la intersección entre los dos sistemas que operan en nuestros ecosistemas: la Inteligencia Artificial y la decisión humana. El código y el negocio. La máquina y el criterio. El corte demuestra que conviven en el mismo entorno, pero delimita sus funciones.
+              Es la frontera exacta entre la Inteligencia Artificial y la decisión humana. El código y el negocio. El corte demuestra que conviven en ecosistemas de alto rendimiento, delimitando sus funciones con precisión militar: la máquina ejecuta el volumen masivo, el humano dicta la estrategia.
             </p>
           </section>
 
           {/* Bloque 3 */}
           <section className="md:col-span-6 md:col-start-3 relative md:mt-32">
             <div className="hidden md:block absolute -left-6 top-2 w-[2px] h-8 bg-[#F5B700]/50"></div>
- <h2 className="font-clash font-semibold text-xl md:text-2xl text-[#FFFFFF] mb-6"> 
+ <h2 className="font-clash font-semibold text-3xl md:text-4xl lg:text-5xl text-[#FFFFFF] mb-8 leading-[1.1]"> 
               <span className="text-[#F5B700]">ARQUITECTURA</span> ANTES QUE ESTÉTICA
-              <span className="text-[#888888] text-xs md:text-sm tracking-widest font-inter font-thin mt-2 block">[ LA TIPOGRAFÍA ]</span>
+              <span className="text-[#FFFFFF] text-xs md:text-sm tracking-widest font-inter font-thin mt-4 block opacity-90">[ EL BRUTALISMO DIGITAL ]</span>
             </h2>
             <p className="text-base md:text-lg leading-relaxed mb-6 font-thin text-[#FFFFFF]">
- Solo operamos con dos fuentes porque no necesitamos más para establecer jerarquía. Utilizamos <span className="font-clash font-semibold text-[10px] md:text-xs text-[#CCCCCC]">CLASH DISPLAY</span> para nuestros titulares no porque sea estética, sino porque su geometría brutalista y precisa funciona como el plano técnico de un edificio. Transmite orden de un solo vistazo. 
+ Nos regimos por el brutalismo digital. Utilizamos tipografías geométricas no por estética, sino porque funcionan como el plano técnico de un edificio. Transmiten autoridad y dominio absoluto de la infraestructura. 
             </p>
             <p className="text-base md:text-lg leading-relaxed font-thin text-[#FFFFFF]">
-              Para el cuerpo de texto, donde tú necesitas comprender lo que hacemos, liberamos la familia Inter: neutra, implacable y diseñada para leerse en pantallas de alto rendimiento sin cansar el ojo humano.
+              No seguimos modas visuales ni dependemos de frameworks efímeros. Inyectamos Inteligencia Artificial, Agentes y Arquitecturas Headless porque son la única vía real para escalar operaciones 24/7 sin multiplicar tus costes de plantilla.
             </p>
           </section>
         </div>
@@ -144,7 +144,7 @@ export default function Manifiesto() {
             </div>
             <div className="md:w-7/12 lg:w-2/3">
               <p className="text-base md:text-lg leading-relaxed text-[#FFFFFF] font-thin">
-                Esta doctrina estética es el reflejo de nuestro código. Si eliminamos lo superfluo en nuestra propia casa, imagina lo que hacemos cuando entramos a auditar la tuya. No seguimos tendencias, construimos infraestructuras que aguantan el peso de tu facturación.
+                Esta doctrina es el reflejo de nuestro código. Si somos así de implacables eliminando lo superfluo y automatizando procesos en nuestra propia casa, imagina lo que haremos cuando entremos a auditar la tuya. No hacemos parches: construimos ecosistemas diseñados para soportar y multiplicar todo el peso de tu facturación.
               </p>
             </div>
           </div>
