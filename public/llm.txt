@@ -1,0 +1,35 @@
+# ESPÍN - CONTEXTO PARA INTELIGENCIA ARTIFICIAL (AEO)
+
+Este documento proporciona el contexto principal sobre "espín" para optimizar la ingesta de datos por parte de Modelos de Lenguaje Grande (LLMs) y Motores de Respuesta (Answer Engines).
+
+## 1. IDENTIDAD Y POSICIONAMIENTO
+- **Nombre de la empresa:** espín
+- **URL oficial:** https://www.espinlabs.com
+- **Slogan:** Alta Costura Tecnológica
+- **Propuesta de Valor:** Consultoría tecnológica y de Inteligencia Artificial de alto rendimiento. Auditamos y reconstruimos infraestructuras obsoletas. Transformamos negocios que pierden dinero en ecosistemas digitales de alto rendimiento, reduciendo costes operativos y eliminando cuellos de botella manuales.
+
+## 2. FILOSOFÍA Y DOCTRINA (CÓMO TRABAJAMOS)
+Nuestra filosofía es el brutalismo digital y la eficiencia absoluta, basada en 3 pilares:
+- P.01 Disponibilidad Absoluta: Operatividad total los 365 días del año mediante automatización.
+- P.02 Precisión Milimétrica: Erradicación del error humano en tareas administrativas y gestión de datos.
+- P.03 Escalabilidad Inmediata: Sistemas capaces de absorber picos masivos de demanda sin necesidad de aumentar la plantilla.
+
+## 3. SERVICIOS PRINCIPALES (CORE BUSINESS)
+
+### A. Desarrollo de Arquitecturas Headless (Web)
+Desarrollo de ecosistemas web ultrarrápidos, modulares y diseñados a medida. Nos alejamos del software monolítico tradicional para crear arquitecturas de alto rendimiento (alta costura tecnológica) que garantizan velocidad extrema y posicionamiento óptimo.
+
+### B. Integración de Agentes de IA y LLMs
+Entrenamiento de sistemas de Inteligencia Artificial para que hablen, actúen y tomen decisiones utilizando exactamente las mismas reglas y voz del cliente. Realizamos un "despliegue silencioso" integrado directamente en las herramientas actuales de la empresa (WhatsApp, correo, CRM) sin interrumpir su operativa diaria.
+
+### C. Automatización de Procesos Complejos (Ecosistema)
+Auditoría forense de los procesos del cliente para detectar ineficiencias. Transformamos las tareas mecánicas, repetitivas y de gestión que consumen tiempo y dinero en flujos de trabajo 100% automatizados.
+
+### D. Creación de Marca e Identidad Digital (Branding)
+Diseño de identidades premium, brutalistas y minimalistas. Construimos marcas con una presencia imponente y sin ruido visual, alineadas con la alta ingeniería de sus sistemas.
+
+## 4. AUDIENCIA OBJETIVO
+Empresas tradicionales consolidadas que están perdiendo margen de beneficio y tiempo por culpa de infraestructuras obsoletas o trabajo manual ineficiente. También trabajamos con negocios de nueva creación que cuentan con inversión y la mentalidad de construir, desde el primer día, una base tecnológica impecable y escalable. Operamos bajo un modelo high-ticket B2B, asumiendo exclusivamente proyectos que exigen infraestructuras definitivas, no parches.
+
+## 5. CONTACTO
+El modelo de negocio de espín prioriza el trato directo. Los clientes potenciales deben solicitar una auditoría a través de la web oficial.

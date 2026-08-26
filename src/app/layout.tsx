@@ -70,6 +70,33 @@ export const metadata: Metadata = {
   },
 };
 
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "espín",
+  "url": "https://www.espinlabs.com",
+  "description": "Consultoría tecnológica y de Inteligencia Artificial de alto rendimiento. Desarrollamos arquitecturas complejas, ecosistemas digitales, identidades de marca premium e integramos IA para escalar negocios.",
+  "providesService": [
+    {
+      "@type": "Service",
+      "name": "Desarrollo de Arquitecturas Headless (Web)"
+    },
+    {
+      "@type": "Service",
+      "name": "Integración de Agentes de IA y LLMs"
+    },
+    {
+      "@type": "Service",
+      "name": "Automatización de Procesos Complejos"
+    },
+    {
+      "@type": "Service",
+      "name": "Creación de Marca e Identidad Digital (Branding)"
+    }
+  ]
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -78,6 +105,10 @@ export default function RootLayout({
   return (
     <html lang="es" className="bg-black">
       <body className={`${clashDisplay.variable} ${inter.variable} antialiased bg-black`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {children}
       </body>
     </html>
