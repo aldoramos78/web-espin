@@ -1,4 +1,6 @@
-import React from "react";
+const fs = require('fs');
+
+let content = `import React from "react";
 import Link from "next/link";
 import { HeroBackground } from "@/components/ui/HeroBackground";
 import { HomeServiceBlock } from "@/components/ui/HomeServiceBlock";
@@ -11,11 +13,11 @@ export default function EspinLanding() {
   const homeServices = [
     { 
       id: "01", 
-      title: "Desarrollo Web de Alto Rendimiento", 
+      title: "Desarrollo de Alto Rendimiento", 
       desc: "Sistemas estáticos pierden dinero a cada segundo. Desplegamos infraestructuras web y aplicaciones ultrarrápidas, escalables y diseñadas exclusivamente para liderar tu mercado.", 
       link: "/desarrollo",
       align: "right",
-      sysText: "[MÓDULO 01] // ESTADO: ACTIVO // REPORTE TÉCNICO: DESARROLLO"
+      sysText: "sys: running / build optimized / 0ms latency / core active"
     },
     { 
       id: "02", 
@@ -23,7 +25,7 @@ export default function EspinLanding() {
       desc: "Tareas mecánicas devoran tu margen de beneficio. Integramos IA en tus flujos de trabajo para que tu empresa opere, soporte y venda en piloto automático 24/7.", 
       link: "/agentes",
       align: "left",
-      sysText: "[MÓDULO 02] // ESTADO: ACTIVO // REPORTE TÉCNICO: AGENTES"
+      sysText: "sys: neural net active / task automated / workflow optimal"
     },
     { 
       id: "03", 
@@ -31,7 +33,7 @@ export default function EspinLanding() {
       desc: "El aspecto de tu empresa es tu primera criba. Diseñamos una identidad sólida, elegante y disruptiva que blinda tu autoridad.", 
       link: "/identidad",
       align: "right",
-      sysText: "[MÓDULO 03] // ESTADO: ACTIVO // REPORTE TÉCNICO: IDENTIDAD"
+      sysText: "sys: visual core loaded / brand identity established"
     }
   ];
 
@@ -46,10 +48,10 @@ export default function EspinLanding() {
           {/* 1. HERO SECTION */}
           <section className="min-h-[100vh] leading-[1.1] md:leading-[1.1] flex flex-col justify-center px-6 md:px-12 pt-16 pb-16 md:pt-32 md:pb-24 border-b border-zinc-900 relative bg-black">
             <HeroBackground />
-            
+            <div className="absolute left-12 top-0 bottom-0 w-px bg-zinc-900 hidden md:block z-0"></div>
             
             <div className="max-w-6xl w-full md:pl-20 mt-0 relative z-10">
-              <h1 className="font-clash font-bold uppercase mb-8 md:mb-12 text-[10vw] sm:text-6xl md:text-7xl lg:text-[7.5rem] xl:text-[8rem] leading-[1.1] md:leading-[1.1] flex flex-col whitespace-nowrap w-full"> 
+              <h1 className="font-clash font-bold uppercase mb-8 md:mb-12 text-[10vw] sm:text-6xl md:text-7xl lg:text-[7rem] leading-[1.1] md:leading-[1.1] flex flex-col break-words w-full max-w-[100vw]"> 
                 <div className="overflow-hidden">
                   <ScrollReveal variant="textReveal" delay={0.1}>
                     ALTA
@@ -109,76 +111,66 @@ export default function EspinLanding() {
             </div>
           </section>
 
-          {/* ECOSISTEMA COMPLETO */}
-          <section id="hachazo" className="group block w-full bg-[#F5B700] border-b border-[#F5B700] relative overflow-hidden transition-all duration-700">
-            {/* Marquee/Scanner background effect */}
-            <div className="absolute inset-0 opacity-10 pointer-events-none overflow-hidden z-0">
-                <div className="w-full h-[2px] bg-black absolute top-0 animate-[scan_4s_linear_infinite]"></div>
-                <div className="w-full h-full bg-[repeating-linear-gradient(45deg,transparent,transparent_10px,rgba(0,0,0,0.1)_10px,rgba(0,0,0,0.1)_20px)]"></div>
-            </div>
-
-            {/* Container exactly matching HomeServiceBlock padding, max-w and flex structure */}
-            <div className="flex flex-col md:flex-row items-center gap-6 md:gap-16 py-16 md:py-28 relative z-10 px-8 md:px-16 max-w-[100vw]">
-              
-              {/* Black Lateral Bar (Hover on desktop, fixed on mobile) */}
-              <div className="absolute top-0 bottom-0 w-2 md:w-3 bg-black transform scale-y-100 md:scale-y-0 origin-top transition-transform duration-700 ease-[0.76,0,0.24,1] group-hover:scale-y-100 left-0"></div>
-
-              {/* Text Content (w-7/12 on md, matching the 'Agentes' layout since we want text on the left) */}
-              <div className="w-full md:w-7/12 flex flex-col relative z-20 items-start text-left">
-                <Link href="/ecosistema" className="group/link block cursor-pointer">
-                  <h3 className="font-clash font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-[5rem] xl:text-[5.5rem] leading-[1.1] uppercase mb-6 text-black transition-colors duration-500 group-hover/link:opacity-80">
-                    ECOSISTEMA<br/>COMPLETO
-                  </h3>
-                  <p className="font-inter font-light text-lg md:text-2xl text-black leading-relaxed max-w-3xl group-hover/link:opacity-80 transition-opacity">
-                    Identidad visual, plataforma web y automatización con IA. Delegas toda la modernización de tu empresa en un solo equipo para liderar tu mercado desde el primer día.
-                  </p>
-                </Link>
-                <div className="mt-8 z-30 pointer-events-auto">
-                  <ContactTrigger className="inline-block cursor-pointer">
-                    <button type="button" className="rings-btn black group/btn">
-                      <i></i><i></i><i></i>
-                      <span>Solicitar Acceso</span>
-                      <svg className="arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
-                    </button>
-                  </ContactTrigger>
-                </div>
-              </div>
-
-              {/* ICON (Mobile: absolute behind text, Desktop: 5/12 width aligned to right, just like 'Agentes' block) */}
-              <div className="absolute inset-0 md:inset-auto md:relative w-full md:w-5/12 flex items-center justify-center -z-10 md:z-10 md:justify-end md:pr-12">
-                <div className="w-[80vw] h-[80vw] md:w-[350px] md:h-[350px] lg:w-[450px] lg:h-[450px] text-black opacity-5 md:opacity-20 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
-                  {/* ViewBox adjusted to 0 0 24 24 and circles scaled directly so it is PERFECTLY physically identical to the others which use 0 0 24 24 */}
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="0.5" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full">
-                    {/* To make it size 16 inside 24x24 (matching the 16 height of fingerprint), scale everything up.
-                        Original: cx=12, cy=8, r=5 (Height=16). It already perfectly fills a 16x17 area inside 24x24! 
-                        If I leave it as 0 0 24 24, it will be EXACTLY the same mathematical size ratio as the others. */}
-                    <circle cx="12" cy="7.5" r="5" />
-                    <circle cx="8.5" cy="14" r="5" />
-                    <circle cx="15.5" cy="14" r="5" />
-                  </svg>
-                </div>
-              </div>
-
-            </div>
-          </section>
-
-</main>
-
           {/* MARQUEE SEPARATOR */}
           <div className="marquee-container py-8 md:py-12 overflow-hidden bg-black border-y border-zinc-900">
             <div className="marquee-content flex whitespace-nowrap w-max" style={{ animationDuration: '40s' }}>
               {[1,2,3,4,5,6].map((i) => (
                 <div key={i} className="marquee-item flex items-center justify-center min-w-max">
-                  <span className="font-clash font-bold text-transparent text-3xl md:text-5xl lg:text-[4.5rem] uppercase mx-4 md:mx-8" style={{ WebkitTextStroke: '1px #F5B700', color: 'transparent' }}> 
+                  <span className="font-clash font-bold text-transparent text-3xl md:text-5xl lg:text-[4.5rem] uppercase mx-4 md:mx-8" style={{ WebkitTextStroke: '1px rgba(255,255,255,0.4)', color: 'transparent' }}> 
                     DELOBSOLETOALRENDIMIENTO
                   </span>
-                  <span className="text-[#F5B700] text-3xl md:text-5xl lg:text-[4.5rem] font-bold mx-4 md:mx-8">*</span>
+                  <svg viewBox="0 0 24 24" className="text-[#F5B700] w-8 h-8 md:w-12 md:h-12 shrink-0 pb-1 mx-4 md:mx-8" style={{ stroke: 'currentColor', strokeWidth: 1.5, fill: 'none' }}>
+                    <line x1="12" y1="2" x2="12" y2="22" />
+                    <line x1="2" y1="12" x2="22" y2="12" />
+                    <line x1="4.93" y1="4.93" x2="19.07" y2="19.07" />
+                    <line x1="19.07" y1="4.93" x2="4.93" y2="19.07" />
+                  </svg>
                 </div>
               ))}
             </div>
           </div>
 
-          
+          {/* ECOSISTEMA COMPLETO */}
+          <section id="hachazo" className="w-full bg-[#F5B700] relative overflow-hidden group transition-all duration-700 min-h-[45vh] border-b border-[#F5B700]">
+            {/* Marquee/Scanner background effect */}
+            <div className="absolute inset-0 opacity-10 pointer-events-none overflow-hidden">
+                <div className="w-full h-[2px] bg-black absolute top-0 animate-[scan_4s_linear_infinite]"></div>
+                <div className="w-full h-full bg-[repeating-linear-gradient(45deg,transparent,transparent_10px,rgba(0,0,0,0.1)_10px,rgba(0,0,0,0.1)_20px)]"></div>
+            </div>
+
+            <div className="relative z-10 px-6 md:px-12 py-16 md:py-24 w-full flex flex-col justify-center min-h-[45vh] pointer-events-none max-w-7xl mx-auto">
+                <div className="w-full flex flex-col md:flex-row justify-between items-center gap-12 relative z-20">
+                  
+                  {/* LEFT SIDE: TEXT AND BUTTON */}
+                  <div className="w-full md:w-1/2 flex flex-col items-start text-left gap-6 md:gap-8 transform transition-transform duration-700 ease-out pointer-events-auto">
+                      <h2 className="font-clash font-semibold uppercase text-4xl sm:text-5xl md:text-5xl lg:text-[4.5rem] leading-[1] text-black tracking-normal"> 
+                        ECOSISTEMA<br/>COMPLETO
+                      </h2>
+                      <p className="font-inter font-normal text-black text-lg md:text-xl lg:text-2xl leading-relaxed max-w-xl">
+                        Identidad visual, plataforma web y automatización con IA. Delegas toda la modernización de tu empresa en un solo equipo para liderar tu mercado desde el primer día.
+                      </p>
+                      <div className="mt-4">
+                        <ContactTrigger className="inline-block cursor-pointer">
+                          <button type="button" className="rings-btn black group/btn">
+                            <i></i><i></i><i></i>
+                            <span>Solicitar Acceso</span>
+                            <svg className="arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+                          </button>
+                        </ContactTrigger>
+                      </div>
+                  </div>
+                  
+                  {/* RIGHT SIDE SPACE FOR CLAUDE ICON */}
+                  <div className="w-full md:w-1/2 flex justify-end items-center pointer-events-auto min-h-[200px]">
+                      {/* Claude's icon will go here */}
+                  </div>
+
+                </div>
+            </div>
+          </section>
+
+        </main>
+
         {/* FOOTER */}
         <footer id="footer" className="bg-black border-t border-zinc-900 pt-12 pb-6 px-6 md:px-12 overflow-hidden">
           <div className="w-full flex flex-row justify-between items-center gap-6 md:gap-8">
@@ -232,3 +224,5 @@ export default function EspinLanding() {
     </>
   );
 }
+`;
+fs.writeFileSync('src/app/page.tsx', content);

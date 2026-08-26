@@ -44,7 +44,7 @@ export default function AgentesLanding() {
               
             <div className="mb-8 md:mb-12">
               <ScrollReveal delay={0.1}>
-                <Link href="/#hero" className="inline-block">
+                <Link href="/" className="inline-block">
                   <button type="button" className="rings-btn small">
                     <i></i><i></i><i></i>
                     <span>← Inicio</span>
@@ -107,7 +107,7 @@ Hacemos que tu <span className="text-[#F5B700]">empresa</span> trabaje sola. Int
             </section>
 
           {/* 2. PROBLEMA SECTION */}
-          <section id="diagnostico" className="px-6 md:px-12 pt-16 pb-16 md:pt-24 md:pb-32 bg-black border-b border-zinc-900 relative">
+          <section id="diagnostico" className="px-6 md:px-12 pt-16 pb-10 md:pt-24 md:pb-20 bg-black relative">
             <ScrollReveal variant="stagger" className="w-full">
               <div className="mb-10 md:mb-20 w-full md:w-[80%]">
                 <div className="mb-10 md:mb-16 w-full">
@@ -126,7 +126,7 @@ Hacemos que tu <span className="text-[#F5B700]">empresa</span> trabaje sola. Int
                 {problemaData.map((p, i) => (
                   <div 
                     key={i}
-                    className="p-6 md:p-8 lg:p-10 xl:p-14 border-b border-zinc-900 md:border-r group hover:bg-[#F5B700] transition-colors duration-700 leading-[1.1] md:leading-[1.1] flex flex-col min-h-[220px] md:min-h-[400px] overflow-hidden relative"
+                    className="p-6 md:p-8 lg:p-10 xl:p-14 border-b last:border-b-0 md:border-b-0 border-zinc-900 md:border-r group hover:bg-[#F5B700] transition-colors duration-700 leading-[1.1] md:leading-[1.1] flex flex-col min-h-[220px] md:min-h-[400px] overflow-hidden relative"
                   >
                     <div className="flex justify-between items-start mb-6 md:mb-12 relative z-10 w-full">
                       <div className="flex items-center gap-6">
@@ -157,7 +157,7 @@ Hacemos que tu <span className="text-[#F5B700]">empresa</span> trabaje sola. Int
           </section>
 
           {/* 3. PROTOCOLO SECTION */}
-          <section id="metodo" className="px-6 md:px-12 pt-16 pb-0 md:pt-24 md:pb-0 bg-black">
+          <section id="metodo" className="px-6 md:px-12 pt-12 pb-0 md:pt-16 md:pb-0 bg-black">
             <div className="w-full">
               <div className="w-full md:w-[80%]">
                 <div className="mb-10 md:mb-16 w-full">
@@ -185,7 +185,7 @@ Hacemos que tu <span className="text-[#F5B700]">empresa</span> trabaje sola. Int
           </section>
           
           {/* 4. PILARES SECTION */}
-          <section id="doctrina" className="px-6 md:px-12 pt-8 pb-16 md:pt-12 md:pb-32 bg-black border-b border-zinc-900 relative">
+          <section id="doctrina" className="px-6 md:px-12 pt-16 pb-16 md:pt-24 md:pb-32 bg-black border-b border-zinc-900 relative">
             <ScrollReveal variant="stagger" className="w-full">
               <div className="mb-10 md:mb-16 w-full">
                   <ScrollReveal variant="slideRight">
@@ -202,7 +202,7 @@ Hacemos que tu <span className="text-[#F5B700]">empresa</span> trabaje sola. Int
                 {pilaresData.map((p, i) => (
                   <div 
                     key={i}
-                    className="p-6 md:p-8 lg:p-10 xl:p-14 border-b border-zinc-900 md:border-r group transition-colors duration-700 leading-[1.1] md:leading-[1.1] flex flex-col min-h-[220px] md:min-h-[400px] overflow-hidden relative hover:bg-[#F5B700]"
+                    className="p-6 md:p-8 lg:p-10 xl:p-14 border-b last:border-b-0 md:border-b-0 border-zinc-900 md:border-r group transition-colors duration-700 leading-[1.1] md:leading-[1.1] flex flex-col min-h-[220px] md:min-h-[400px] overflow-hidden relative hover:bg-[#F5B700]"
                   >
                     <div className="flex justify-between items-start mb-6 md:mb-12 relative z-10 w-full">
                       <div className="flex items-center gap-6">

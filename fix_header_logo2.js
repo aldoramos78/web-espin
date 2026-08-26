@@ -1,74 +1,13 @@
-"use client";
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
-import Link from "next/link";
+const fs = require('fs');
+const path = require('path');
 
-export function SmartHeader({ onContactClick }: { onContactClick: () => void }) {
-  const easePremium: [number, number, number, number] = [0.76, 0, 0.24, 1];
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isHeaderHidden, setIsHeaderHidden] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const { scrollY } = useScroll();
+let headerPath = path.resolve('src/components/ui/SmartHeader.tsx');
+let headerContent = fs.readFileSync(headerPath, 'utf8');
 
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    const previous = scrollY.getPrevious();
-    
-    if (latest > 50) {
-      setIsScrolled(true);
-    } else {
-      setIsScrolled(false);
-    }
+// Replace the WHOLE motion.div block of the logo to be 100% sure.
+const logoBlockRegex = /\{\/\*\s*Logo\s*\*\/\}[\s\S]*?<\/motion\.div>/;
 
-    if (latest > (previous ?? 0) && latest > 150) {
-      setIsHeaderHidden(true);
-    } else {
-      setIsHeaderHidden(false);
-    }
-  });
-
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        setIsMobileMenuOpen(false);
-      }
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
-
-      const navLinks = [
-    { label: "Desarrollo", href: "/desarrollo" },
-    { label: "Agentes", href: "/agentes" },
-    { label: "Identidad", href: "/identidad" },
-    { label: "Ecosistema", href: "/ecosistema" },
-  ];
-
-  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (href.startsWith('#')) {
-      e.preventDefault();
-      const id = href.replace('#', '');
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
-        });
-      }
-      setIsMobileMenuOpen(false);
-    }
-  };
-
-  return (
-    <>
-      {/* Desktop Header */}
-      <motion.nav 
-        initial={{ y: -100 }} 
-        animate={{ y: isHeaderHidden ? "-100%" : 0 }} 
-        transition={{ duration: 1, ease: easePremium, delay: 0.2 }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-500 ${isScrolled ? "bg-black/60 backdrop-blur-md border-b border-white/5" : "bg-transparent mix-blend-difference"}`}
-      >
-        <div className="px-6 md:px-12 py-5 flex items-center justify-between w-full">
-          {/* Logo */}
+const newLogoBlock = `{/* Logo */}
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.5, ease: easePremium }} className="flex justify-start">
             <Link href="/" aria-label="espin" className="flex items-center text-white transition-colors">
               <svg aria-hidden="true" className="h-10 md:h-10 w-auto" viewBox="0 0 1606 564" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -80,63 +19,9 @@ export function SmartHeader({ onContactClick }: { onContactClick: () => void }) 
                 <path d="M329.834 386.766C329.834 407.762 326.66 424.282 320.312 436.326C314.128 448.37 304.606 457.16 291.748 462.693C278.89 468.227 262.451 471.727 242.432 473.191C222.575 474.819 198.893 475.633 171.387 475.633C139.974 475.633 113.281 474.005 91.3086 470.75C69.4987 467.658 51.8392 461.229 38.3301 451.463C24.9837 441.535 15.2181 426.723 9.0332 407.029C3.01107 387.335 0 361.049 0 328.172C0 296.271 2.92969 270.717 8.78906 251.512C14.8112 232.306 24.4954 217.82 37.8418 208.055C51.1882 198.289 68.6849 191.779 90.332 188.523C112.142 185.268 138.753 183.641 170.166 183.641C206.136 183.641 235.921 186.163 259.521 191.209C283.122 196.255 300.7 205.857 312.256 220.018C323.975 234.178 329.834 254.93 329.834 282.273V342.576H47.1191C47.2819 363.41 48.7467 380.092 51.5137 392.625C54.2806 405.158 59.8145 414.598 68.1152 420.945C76.416 427.293 88.7858 431.525 105.225 433.641C121.826 435.594 143.88 436.57 171.387 436.57C196.126 436.57 216.064 436.082 231.201 435.105C246.501 434.129 258.057 432.013 265.869 428.758C273.844 425.34 279.215 420.294 281.982 413.621C284.749 406.948 286.133 397.996 286.133 386.766H329.834ZM170.166 222.703C143.636 222.703 122.233 223.68 105.957 225.633C89.8438 227.586 77.5553 231.411 69.0918 237.107C60.6283 242.641 54.8503 250.942 51.7578 262.01C48.8281 273.077 47.2819 287.645 47.1191 305.711H284.912V282.273C284.912 270.555 283.529 260.87 280.762 253.221C278.158 245.408 272.949 239.305 265.137 234.91C257.324 230.353 245.768 227.179 230.469 225.389C215.332 223.598 195.231 222.703 170.166 222.703Z" fill="currentColor"/>
               </svg>
             </Link>
-          </motion.div>
-          
-          {/* Nav Right (CTA + Hamburger) */}
-          <div className="flex justify-end items-center gap-4 md:gap-8 relative z-[110]">
-            <button type="button" className="rings-btn small !hidden md:!inline-flex" onClick={onContactClick}>
-              <i></i><i></i><i></i>
-              <span>SOLICITAR AUDITORÍA</span>
-              <svg className="arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
-            </button>
-            <button 
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
-              className="p-4 focus:outline-none transition-colors relative w-12 h-12 flex items-center justify-center bg-transparent group"
-              aria-label="Toggle menu"
-            >
-              <div className="relative w-8 h-5">
-                <span className={`absolute left-0 w-8 h-[2px] bg-white group-hover:bg-[#F5B700] transition-all duration-300 ${isMobileMenuOpen ? 'top-2.5 rotate-45' : 'top-0'}`}></span>
-                <span className={`absolute left-0 w-8 h-[2px] bg-white group-hover:bg-[#F5B700] transition-all duration-300 top-2.5 ${isMobileMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
-                <span className={`absolute left-0 w-8 h-[2px] bg-white group-hover:bg-[#F5B700] transition-all duration-300 ${isMobileMenuOpen ? 'top-2.5 -rotate-45' : 'top-5'}`}></span>
-              </div>
-            </button>
-          </div>
-        </div>
-      </motion.nav>
+          </motion.div>`;
 
-      {/* Full-Screen Menu Overlay */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div 
-            initial={{ opacity: 0, y: "-100%" }} 
-            animate={{ opacity: 1, y: 0 }} 
-            exit={{ opacity: 0, y: "-100%" }} 
-            transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
-            className="fixed inset-0 bg-[#111110] z-[100] flex flex-col justify-center overflow-y-auto"
-          >
-            <div className="flex items-center justify-between w-full px-6 md:px-12 absolute top-6 left-0 right-0 z-[120]">
-              <button onClick={() => setIsMobileMenuOpen(false)} className="text-white hover:text-[#F5B700] p-4 text-4xl transition-colors font-light ml-auto" aria-label="Cerrar menú">×</button>
-            </div>
-            <div className="w-full max-w-7xl mx-auto flex flex-col px-6 py-24 md:px-16 md:py-32 mt-12 md:mt-0">
-              {navLinks.map((link, index) => (
-                  <Link 
-                    key={link.href} 
-                    href={link.href} 
-                    onClick={(e) => handleSmoothScroll(e, link.href)} 
-                    className="group block py-6 md:py-10 border-t border-zinc-800 transition-colors"
-                  >
-                    <div className="flex flex-row items-baseline gap-4 md:gap-10 transform group-hover:translate-x-3 md:group-hover:translate-x-6 transition-transform duration-300 ease-out">
-                      <span className="font-space-mono text-sm md:text-xl text-[#F5B700]">0{index + 1}</span>
- <span className="font-clash font-semibold font-bold uppercase text-white group-hover:text-[#F5B700] transition-colors duration-300" style={{ fontSize: 'clamp(1.8rem, 6vw, 6rem)', lineHeight: 1 }}> 
-                        {link.label}
-                      </span>
-                    </div>
-                  </Link>
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </>
-  );
-}
+headerContent = headerContent.replace(logoBlockRegex, newLogoBlock);
+
+fs.writeFileSync(headerPath, headerContent, 'utf8');
+console.log('Fixed SmartHeader logo link');

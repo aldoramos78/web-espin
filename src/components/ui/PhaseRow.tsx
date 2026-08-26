@@ -12,7 +12,7 @@ export function PhaseRow({  phase , isLast }: {  phase: { id: string, title: str
 
   return (
     <motion.div ref={ref} style={{ opacity, scale }} className={`flex flex-col md:flex-row md:items-start gap-4 md:gap-24 py-10 md:py-20 border-t border-zinc-900 group ${isLast ? 'border-b' : ''}`}>
- <motion.div style={{ WebkitTextStroke: "2px #F5B700", color: "transparent", opacity: numOpacity }} className="font-clash font-semibold text-6xl md:text-8xl"> 
+ <motion.div style={{ WebkitTextStroke: "2px #F5B700", color: "transparent", opacity: numOpacity }} className="font-clash font-semibold text-[6rem] md:text-[10rem] lg:text-[12rem] leading-none"> 
         {phase.id}
       </motion.div>
       <div className="flex-1 mt-2 md:mt-0">

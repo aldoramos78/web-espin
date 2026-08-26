@@ -49,7 +49,7 @@ export function HomeServiceBlock({ phase, align }: { phase: { id: string, title:
 
         {/* Text Content */}
         <div className={`w-full md:w-7/12 flex flex-col relative z-20 ${isRight ? 'items-end text-right' : 'items-start text-left'}`}>
-          <h3 className="font-clash font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl uppercase mb-6 text-[#F5B700] md:text-white group-hover:text-[#F5B700] transition-colors duration-500">
+          <h3 className="font-clash font-semibold text-3xl sm:text-4xl md:text-6xl lg:text-[5rem] xl:text-[5.5rem] leading-[1.1] uppercase mb-6 text-[#F5B700] md:text-white group-hover:text-[#F5B700] transition-colors duration-500">
             {phase.title}
           </h3> 
           <p className="font-inter font-light text-lg md:text-2xl text-[#d4d4d8] leading-relaxed max-w-3xl">
