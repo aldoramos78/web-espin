@@ -80,7 +80,7 @@ export default function EspinLanding() {
                 <ContactTrigger className="inline-block cursor-pointer">
                   <button type="button" className="rings-btn">
                     <i></i><i></i><i></i>
-                    <span>Inicia la Auditoría</span>
+                    <span>Solicitar Auditoría</span>
                     <svg className="arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
                   </button>
                 </ContactTrigger>
@@ -135,10 +135,10 @@ export default function EspinLanding() {
                   </p>
                 </Link>
                 <div className="mt-8 z-30 pointer-events-auto">
-                  <ContactTrigger className="inline-block cursor-pointer">
+                  <ContactTrigger servicio="ecosistema" className="inline-block cursor-pointer">
                     <button type="button" className="rings-btn black group/btn">
                       <i></i><i></i><i></i>
-                      <span>Solicitar Acceso</span>
+                      <span>Solicitar Ecosistema</span>
                       <svg className="arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
                     </button>
                   </ContactTrigger>

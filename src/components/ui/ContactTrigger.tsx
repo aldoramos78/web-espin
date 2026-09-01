@@ -1,16 +1,21 @@
 "use client";
 import React from "react";
+import Link from "next/link";
 
 export function ContactTrigger({ 
   children, 
-  className = "" 
+  className = "",
+  servicio
 }: { 
   children: React.ReactNode, 
-  className?: string 
+  className?: string,
+  servicio?: "web" | "agentes" | "marca" | "ecosistema"
 }) {
+  const targetUrl = servicio ? `/auditoria?servicio=${servicio}` : "/auditoria";
+  
   return (
-    <div onClick={() => document.dispatchEvent(new Event("open-contact-modal"))} className={className}>
+    <Link href={targetUrl} className={`block ${className}`}>
       {children}
-    </div>
+    </Link>
   );
 }

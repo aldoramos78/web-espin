@@ -82,7 +82,7 @@ Hacemos que tu <span className="text-[#F5B700]">empresa</span> trabaje sola. Int
               </div>
 
               <ScrollReveal delay={0.8}>
-                <ContactTrigger className="inline-block cursor-pointer">
+                <ContactTrigger servicio="agentes" className="inline-block cursor-pointer">
                   <button type="button" className="rings-btn">
                     <i></i><i></i><i></i>
                     <span>Solicitar Auditoría IA</span>

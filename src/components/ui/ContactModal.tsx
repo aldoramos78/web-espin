@@ -6,6 +6,17 @@ export function ContactModal({ isOpen, onClose }: { isOpen: boolean, onClose: ()
   const easePremium: [number, number, number, number] = [0.22, 1, 0.36, 1];
   
   const [status, setStatus] = useState<"idle"|"loading"|"success"|"error">("idle");
+  const [ecosistema, setEcosistema] = useState(false);
+  const [serviciosSeleccionados, setServiciosSeleccionados] = useState({ web: false, agentes: false, marca: false });
+
+  const handleEcosistemaChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const isChecked = e.target.checked;
+    setEcosistema(isChecked);
+    if (isChecked) {
+      setServiciosSeleccionados({ web: false, agentes: false, marca: false });
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus("loading");
@@ -19,6 +30,21 @@ export function ContactModal({ isOpen, onClose }: { isOpen: boolean, onClose: ()
     } else if (typeof data.url === 'string' && !data.url.startsWith('http')) {
       data.url = `https://${data.url.trim()}`;
     }
+
+    const servicios = [];
+    if (ecosistema) {
+      servicios.push("Ecosistema Completo");
+    } else {
+      if (serviciosSeleccionados.web) servicios.push("Desarrollo Web");
+      if (serviciosSeleccionados.agentes) servicios.push("Agentes");
+      if (serviciosSeleccionados.marca) servicios.push("Imagen y Marca");
+    }
+    data.servicios = servicios.join(", ");
+    
+    delete data.servicio_web;
+    delete data.servicio_agentes;
+    delete data.servicio_marca;
+    delete data.servicio_ecosistema;
 
     try {
       const response = await fetch("/api/contact", {
@@ -44,7 +70,11 @@ export function ContactModal({ isOpen, onClose }: { isOpen: boolean, onClose: ()
   // Reset status when modal finishes closing
   useEffect(() => { 
     if (!isOpen) {
-      const timer = setTimeout(() => setStatus("idle"), 500);
+      const timer = setTimeout(() => {
+        setStatus("idle");
+        setEcosistema(false);
+        setServiciosSeleccionados({ web: false, agentes: false, marca: false });
+      }, 500);
       return () => clearTimeout(timer);
     } 
   }, [isOpen]);
@@ -81,13 +111,13 @@ export function ContactModal({ isOpen, onClose }: { isOpen: boolean, onClose: ()
             {status === "success" ? (
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="py-16 md:py-24 text-center flex flex-col items-center justify-center">
                 <div className="w-20 h-20 md:w-24 md:h-24 border border-[#F5B700] rounded-full mx-auto mb-8 md:mb-10 flex items-center justify-center text-[#F5B700] text-3xl md:text-4xl">✓</div>
- <h3 className="font-clash font-semibold text-2xl md:text-4xl text-white uppercase mb-6">Solicitud Recibida</h3> 
+                <h3 className="font-clash font-semibold text-2xl md:text-4xl text-white uppercase mb-6">Solicitud Recibida</h3> 
                 <p className="text-zinc-400 font-light text-base md:text-lg max-w-md mx-auto">Nuestro equipo analizará tu consulta y te contactará en las próximas 24h.</p>
               </motion.div>
             ) : (
               <>
                 <div className="mb-10 md:mb-14">
- <h2 className="font-clash font-semibold text-2xl md:text-3xl uppercase text-white mb-4"> 
+                  <h2 className="font-clash font-semibold text-2xl md:text-3xl uppercase text-white mb-4"> 
                     Solicitud de Auditoría<span className="text-[#F5B700]">.</span>
                   </h2>
                   <p className="font-inter text-zinc-500 text-xs md:text-sm tracking-wide leading-relaxed max-w-lg italic">
@@ -107,11 +137,48 @@ export function ContactModal({ isOpen, onClose }: { isOpen: boolean, onClose: ()
 
                 <input type="text" name="url" placeholder="URL de tu web actual" className="w-full bg-transparent border-b border-zinc-700 py-3 text-white text-sm md:text-base outline-none focus:border-[#F5B700] caret-[#F5B700] transition-colors placeholder:text-zinc-400 rounded-none" />
 
+                <div className="flex flex-col gap-4">
+                  <span className="text-zinc-400 text-sm md:text-base">Servicios de interés:</span>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <label className={`flex items-center gap-3 cursor-pointer group ${ecosistema ? 'opacity-30 pointer-events-none' : ''} transition-opacity duration-300`}>
+                      <div className="relative flex items-center justify-center">
+                        <input type="checkbox" name="servicio_web" checked={serviciosSeleccionados.web} onChange={(e) => setServiciosSeleccionados({ ...serviciosSeleccionados, web: e.target.checked })} className="peer appearance-none w-5 h-5 border border-zinc-700 bg-transparent checked:bg-[#F5B700] checked:border-[#F5B700] transition-colors cursor-pointer" />
+                        <span className="absolute text-black opacity-0 peer-checked:opacity-100 pointer-events-none text-xs">✓</span>
+                      </div>
+                      <span className="text-zinc-300 text-sm group-hover:text-white transition-colors">Desarrollo Web</span>
+                    </label>
+
+                    <label className={`flex items-center gap-3 cursor-pointer group ${ecosistema ? 'opacity-30 pointer-events-none' : ''} transition-opacity duration-300`}>
+                      <div className="relative flex items-center justify-center">
+                        <input type="checkbox" name="servicio_agentes" checked={serviciosSeleccionados.agentes} onChange={(e) => setServiciosSeleccionados({ ...serviciosSeleccionados, agentes: e.target.checked })} className="peer appearance-none w-5 h-5 border border-zinc-700 bg-transparent checked:bg-[#F5B700] checked:border-[#F5B700] transition-colors cursor-pointer" />
+                        <span className="absolute text-black opacity-0 peer-checked:opacity-100 pointer-events-none text-xs">✓</span>
+                      </div>
+                      <span className="text-zinc-300 text-sm group-hover:text-white transition-colors">Agentes de IA</span>
+                    </label>
+
+                    <label className={`flex items-center gap-3 cursor-pointer group ${ecosistema ? 'opacity-30 pointer-events-none' : ''} transition-opacity duration-300`}>
+                      <div className="relative flex items-center justify-center">
+                        <input type="checkbox" name="servicio_marca" checked={serviciosSeleccionados.marca} onChange={(e) => setServiciosSeleccionados({ ...serviciosSeleccionados, marca: e.target.checked })} className="peer appearance-none w-5 h-5 border border-zinc-700 bg-transparent checked:bg-[#F5B700] checked:border-[#F5B700] transition-colors cursor-pointer" />
+                        <span className="absolute text-black opacity-0 peer-checked:opacity-100 pointer-events-none text-xs">✓</span>
+                      </div>
+                      <span className="text-zinc-300 text-sm group-hover:text-white transition-colors">Imagen y Marca</span>
+                    </label>
+
+                    <label className="flex items-center gap-3 cursor-pointer group transition-opacity duration-300">
+                      <div className="relative flex items-center justify-center">
+                        <input type="checkbox" name="servicio_ecosistema" checked={ecosistema} onChange={handleEcosistemaChange} className="peer appearance-none w-5 h-5 border border-zinc-700 bg-transparent checked:bg-[#F5B700] checked:border-[#F5B700] transition-colors cursor-pointer" />
+                        <span className="absolute text-black opacity-0 peer-checked:opacity-100 pointer-events-none text-xs">✓</span>
+                      </div>
+                      <span className="text-white font-semibold text-sm group-hover:text-[#F5B700] transition-colors">Ecosistema Completo</span>
+                    </label>
+                  </div>
+                </div>
+
                 <textarea required rows={3} name="problema" placeholder="¿Cuál es el problema técnico u operativo que más está penalizando a tu negocio?" className="w-full bg-transparent border-b border-zinc-700 py-3 text-white text-sm md:text-base outline-none focus:border-[#F5B700] caret-[#F5B700] transition-colors placeholder:text-zinc-400 resize-none rounded-none"></textarea>
 
                 <button type="submit" disabled={status === "loading"} className="group relative w-full bg-[#F5B700] text-black py-5 md:py-6 mt-4 overflow-hidden disabled:opacity-50 transition-transform duration-500 hover:scale-[1.01] border border-[#F5B700]">
                   <div className="absolute inset-0 bg-white transform scale-y-0 origin-bottom group-hover:scale-y-100 transition-transform duration-700 ease-[0.16,1,0.3,1] z-0"></div>
- <span className="relative z-10 font-clash font-semibold text-xs md:text-sm uppercase font-bold"> 
+                  <span className="relative z-10 font-clash font-semibold text-xs md:text-sm uppercase font-bold"> 
                     {status === "loading" ? "Procesando..." : status === "error" ? "Error - Reintentar" : "Enviar Solicitud"}
                   </span>
                 </button>

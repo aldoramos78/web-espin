@@ -84,7 +84,7 @@ export default function EcosistemaPage() {
             </div>
 
             <ScrollReveal delay={0.8}>
-              <ContactTrigger className="inline-block cursor-pointer">
+              <ContactTrigger servicio="ecosistema" className="inline-block cursor-pointer">
                 <button type="button" className="rings-btn">
                   <i></i><i></i><i></i>
                   <span>Solicitar Intervención Total</span>
@@ -216,7 +216,7 @@ export default function EcosistemaPage() {
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.4}>
-              <ContactTrigger className="inline-block cursor-pointer">
+              <ContactTrigger servicio="ecosistema" className="inline-block cursor-pointer">
                 <button type="button" className="rings-btn">
                   <i></i><i></i><i></i>
                   <span>Hablar con un Consultor</span>

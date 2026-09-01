@@ -82,7 +82,7 @@ export default function EspinLanding() {
               </div>
 
               <ScrollReveal delay={0.8}>
-                <ContactTrigger className="inline-block cursor-pointer">
+                <ContactTrigger servicio="marca" className="inline-block cursor-pointer">
                   <button type="button" className="rings-btn">
                     <i></i><i></i><i></i>
                     <span>Solicitar Auditoría Visual</span>

@@ -2,8 +2,9 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
 import Link from "next/link";
+import { ContactTrigger } from "./ContactTrigger";
 
-export function SmartHeader({ onContactClick }: { onContactClick: () => void }) {
+export function SmartHeader() {
   const easePremium: [number, number, number, number] = [0.76, 0, 0.24, 1];
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isHeaderHidden, setIsHeaderHidden] = useState(false);
@@ -84,11 +85,15 @@ export function SmartHeader({ onContactClick }: { onContactClick: () => void }) 
           
           {/* Nav Right (CTA + Hamburger) */}
           <div className="flex justify-end items-center gap-4 md:gap-8 relative z-[110]">
-            <button type="button" className="rings-btn small !hidden md:!inline-flex" onClick={onContactClick}>
+            <ContactTrigger className="!hidden md:!inline-flex">
+            <button type="button" className="rings-btn small">
+              
               <i></i><i></i><i></i>
               <span>SOLICITAR AUDITORÍA</span>
               <svg className="arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+            
             </button>
+          </ContactTrigger>
             <button 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
               className="p-4 focus:outline-none transition-colors relative w-12 h-12 flex items-center justify-center bg-transparent group"
