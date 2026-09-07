@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export function ContactTrigger({ 
   children, 
@@ -11,7 +12,10 @@ export function ContactTrigger({
   className?: string,
   servicio?: "web" | "agentes" | "marca" | "ecosistema"
 }) {
-  const targetUrl = servicio ? `/auditoria?servicio=${servicio}` : "/auditoria";
+  const pathname = usePathname();
+  const isEn = pathname.startsWith("/en");
+  const prefix = isEn ? "/en" : "/es";
+  const targetUrl = servicio ? `${prefix}/auditoria?servicio=${servicio}` : `${prefix}/auditoria`;
   
   return (
     <Link href={targetUrl} className={`block ${className}`}>
