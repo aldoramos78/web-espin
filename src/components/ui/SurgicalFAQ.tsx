@@ -90,6 +90,7 @@ export function SurgicalFAQ({ isEn }: { isEn: boolean }) {
           {faqs.map((faq, i) => (
             <details 
               key={i} 
+              name="espin-faq"
               className="group border-r border-b border-zinc-900 bg-black cursor-pointer [&_summary::-webkit-details-marker]:hidden"
             >
               <summary className="flex justify-between items-center p-6 list-none font-inter text-[13px] md:text-[15px] text-zinc-300 hover:text-white transition-colors uppercase tracking-wider font-normal">
@@ -105,6 +106,23 @@ export function SurgicalFAQ({ isEn }: { isEn: boolean }) {
           ))}
         </div>
       </div>
+          <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            document.querySelectorAll('details[name="espin-faq"]').forEach(function(details) {
+              details.addEventListener('toggle', function(e) {
+                if (details.open) {
+                  document.querySelectorAll('details[name="espin-faq"]').forEach(function(other) {
+                    if (other !== details) {
+                      other.removeAttribute('open');
+                    }
+                  });
+                }
+              });
+            });
+          `
+        }}
+      />
     </section>
   );
 }
