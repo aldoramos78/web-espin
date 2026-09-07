@@ -187,8 +187,8 @@ function AuditoriaForm({ isEn }: { isEn: boolean }) {
   );
 }
 
-export default async function AuditoriaPage({ params }: { params: Promise<{ lang: string }> }) {
-  const resolvedParams = await params;
+export default function AuditoriaPage({ params }: { params: Promise<{ lang: string }> }) {
+  const resolvedParams = React.use(params);
   return (
     <Suspense fallback={<div className="min-h-screen bg-black" />}>
       <AuditoriaForm isEn={resolvedParams.lang === "en"} />
