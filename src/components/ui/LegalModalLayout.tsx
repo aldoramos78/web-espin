@@ -1,9 +1,11 @@
 "use client";
 import React, { useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 export function LegalModalLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
+  const pathname = usePathname();
+  const lang = pathname.split('/')[1] || 'es';
 
   const handleClose = () => {
     // Si se abrió en una pestaña nueva (target="_blank"), window.close() funcionará
@@ -12,7 +14,7 @@ export function LegalModalLayout({ children }: { children: React.ReactNode }) {
       router.back();
     } else {
       window.close();
-      router.push("/");
+      router.push(`/${lang}`);
     }
   };
 
@@ -46,3 +48,4 @@ export function LegalModalLayout({ children }: { children: React.ReactNode }) {
     </div>
   );
 }
+

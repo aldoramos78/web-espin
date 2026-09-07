@@ -1,8 +1,12 @@
 "use client";
 import React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export function Footer() {
+  const pathname = usePathname();
+  const lang = pathname.split('/')[1] || 'es';
+  const isEn = lang === 'en';
   return (
     <footer id="footer" className="bg-black border-t border-zinc-900 pt-12 pb-6 px-6 md:px-12 overflow-hidden">
       <div className="w-full flex flex-row justify-between items-center gap-6 md:gap-8">
@@ -21,14 +25,14 @@ export function Footer() {
         <div className="leading-[1.1] md:leading-[1.1] flex flex-col w-[50vw] md:w-[400px] font-mono z-10">
           <div className="text-[8px] md:text-[10px] tracking-[0.2em] md:tracking-[0.4em] text-zinc-600 mb-4 md:mb-6 uppercase flex items-center gap-2 md:gap-3">
             <div className="w-1.5 h-1.5 bg-[#F5B700]"></div>
-            Protocolo Legal
+            {isEn ? "Legal Protocol" : "Protocolo Legal"}
           </div>
           
           <div className="leading-[1.1] md:leading-[1.1] flex flex-col border-t border-zinc-900">
             {[
-              { name: 'Aviso Legal', path: '/aviso-legal' },
-              { name: 'Privacidad', path: '/politica-de-privacidad' },
-              { name: 'Cookies', path: '/politica-de-cookies' }
+              { name: isEn ? 'Legal Notice' : 'Aviso Legal', path: `/${lang}/aviso-legal` },
+              { name: isEn ? 'Privacy Policy' : 'Privacidad', path: `/${lang}/politica-de-privacidad` },
+              { name: isEn ? 'Cookies' : 'Cookies', path: `/${lang}/politica-de-cookies` }
             ].map((item) => (
               <Link key={item.name} href={item.path} className="group flex justify-between items-center py-4 md:py-6 border-b border-zinc-900 transition-all duration-300 hover:border-zinc-800 cursor-pointer">
                 <span className="text-white font-normal group-hover:text-[#F5B700] group-hover:scale-[1.02] transform transition-all duration-300 origin-left uppercase text-xs md:text-sm tracking-[0.15em] md:tracking-[0.2em]">{item.name}</span>
@@ -41,13 +45,13 @@ export function Footer() {
 
       {/* Full-width separator and copyright */}
       <div className="-mx-6 md:-mx-12 px-6 md:px-12 mt-16 pt-6 border-t border-zinc-900 leading-[1.1] md:leading-[1.1] flex flex-col md:flex-row justify-between items-center gap-6 font-mono text-[9px] uppercase tracking-widest text-zinc-600">
-        <p className="flex-1 text-center md:text-left order-2 md:order-1">&copy; {new Date().getFullYear()} ESPÍN LABS. TODOS LOS DERECHOS RESERVADOS.</p>
+        <p className="flex-1 text-center md:text-left order-2 md:order-1">&copy; {new Date().getFullYear()} ESPÍN LABS - NIF: 39737023S - {isEn ? "ALL RIGHTS RESERVED" : "TODOS LOS DERECHOS RESERVADOS"}.</p>
         <a href="mailto:contacto@espinlabs.com" className="flex-1 text-center hover:text-[#F5B700] transition-colors order-1 md:order-2 text-zinc-400 font-inter normal-case text-xs md:text-sm">
           contacto@espinlabs.com
         </a>
         <div className="flex-1 flex justify-center md:justify-end items-center gap-3 order-3">
           <span className="w-1 h-1 bg-[#F5B700]"></span>
-          <p>ALTA COSTURA TECNOLÓGICA</p>
+          <p>{isEn ? "TECHNOLOGICAL HAUTE COUTURE" : "ALTA COSTURA TECNOLÓGICA"}</p>
         </div>
       </div>
     </footer>

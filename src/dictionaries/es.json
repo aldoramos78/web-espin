@@ -1,0 +1,35 @@
+{
+  "nav": {
+    "agency": "AGENTES",
+    "methodology": "ECOSISTEMA",
+    "contact": "CONTACTO"
+  },
+  "hero": {
+    "titleLine1": "ALTA",
+    "titleLine2": "COSTURA",
+    "titleLine3": "TECNOLÓGICA",
+    "desc1": "Auditamos y reconstruimos infraestructuras ",
+    "hl1": "obsoletas",
+    "desc2": ". Transformamos negocios que pierden dinero en ecosistemas digitales de ",
+    "hl2": "alto rendimiento",
+    "desc3": ".",
+    "cta": "Solicitar Auditoría"
+  },
+  "services": [
+    {
+      "title": "Desarrollo Web de Alto Rendimiento",
+      "desc": "Sistemas estáticos pierden dinero a cada segundo. Desplegamos infraestructuras web y aplicaciones ultrarrápidas, escalables y diseñadas exclusivamente para liderar tu mercado.",
+      "sysText": "[MÓDULO 01] // ESTADO: ACTIVO // REPORTE TÉCNICO: DESARROLLO"
+    },
+    {
+      "title": "Agentes y Automatización",
+      "desc": "Tareas mecánicas devoran tu margen de beneficio. Integramos IA en tus flujos de trabajo para que tu empresa opere, soporte y venda en piloto automático 24/7.",
+      "sysText": "[MÓDULO 02] // ESTADO: ACTIVO // REPORTE TÉCNICO: AGENTES"
+    },
+    {
+      "title": "Identidad Visual y Marca",
+      "desc": "El aspecto de tu empresa es tu primera criba. Diseñamos una identidad sólida, elegante y disruptiva que blinda tu autoridad.",
+      "sysText": "[MÓDULO 03] // ESTADO: ACTIVO // REPORTE TÉCNICO: IDENTIDAD"
+    }
+  ]
+}

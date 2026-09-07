@@ -1,10 +1,14 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { ContactTrigger } from "./ContactTrigger";
+import { LanguageToggle } from "./LanguageToggle";
 
 export function SmartHeader() {
+  const pathname = usePathname();
+  const lang = pathname.split("/")[1] || "es";
   const easePremium: [number, number, number, number] = [0.76, 0, 0.24, 1];
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isHeaderHidden, setIsHeaderHidden] = useState(false);
@@ -38,10 +42,10 @@ export function SmartHeader() {
   }, []);
 
       const navLinks = [
-    { label: "Desarrollo", href: "/desarrollo" },
-    { label: "Agentes", href: "/agentes" },
-    { label: "Identidad", href: "/identidad" },
-    { label: "Ecosistema", href: "/ecosistema" },
+    { label: lang === 'en' ? "Development" : "Desarrollo", href: `/${lang}/${lang === 'en' ? 'development' : 'desarrollo'}` },
+    { label: lang === 'en' ? "Agents" : "Agentes", href: `/${lang}/${lang === 'en' ? 'agents' : 'agentes'}` },
+    { label: lang === 'en' ? "Branding" : "Identidad", href: `/${lang}/${lang === 'en' ? 'branding' : 'identidad'}` },
+    { label: lang === 'en' ? "Ecosystem" : "Ecosistema", href: `/${lang}/${lang === 'en' ? 'ecosystem' : 'ecosistema'}` },
   ];
 
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -63,15 +67,15 @@ export function SmartHeader() {
     <>
       {/* Desktop Header */}
       <motion.nav 
-        initial={{ y: -100 }} 
+        initial={false} 
         animate={{ y: isHeaderHidden ? "-100%" : 0 }} 
         transition={{ duration: 1, ease: easePremium, delay: 0.2 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-500 ${isScrolled ? "bg-black/60 backdrop-blur-md border-b border-white/5" : "bg-transparent mix-blend-difference"}`}
       >
         <div className="px-6 md:px-12 py-5 flex items-center justify-between w-full">
           {/* Logo */}
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.5, ease: easePremium }} className="flex justify-start">
-            <Link href="/" aria-label="espin" className="flex items-center text-white transition-colors">
+          <motion.div  className="flex justify-start">
+            <Link href={`/${lang}`} aria-label="espin" className="flex items-center text-white transition-colors ">
               <svg aria-hidden="true" className="h-10 md:h-10 w-auto" viewBox="0 0 1606 564" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1277.06 469.262V188.012H1323.94V225.365C1330.94 215.925 1339.56 208.031 1349.82 201.684C1360.23 195.336 1374.07 190.616 1391.32 187.523C1408.74 184.268 1431.52 182.641 1459.68 182.641C1496.46 182.641 1525.43 186.221 1546.59 193.383C1567.92 200.544 1583.05 213.321 1592 231.713C1600.96 250.105 1605.43 276.146 1605.43 309.838V469.262H1558.31V309.838C1558.31 290.632 1556.68 275.17 1553.43 263.451C1550.17 251.732 1544.56 242.862 1536.58 236.84C1528.77 230.818 1517.95 226.83 1504.11 224.877C1490.28 222.761 1472.7 221.703 1451.38 221.703C1418.83 221.703 1393.27 224.389 1374.72 229.76C1356.16 235.131 1343.06 243.594 1335.41 255.15C1327.76 266.544 1323.94 281.436 1323.94 299.828V469.262H1277.06Z" fill="currentColor"/>
                 <path d="M1170.71 469.262V203.637H1217.59V469.262H1170.71ZM1139.46 141.625L1123.84 118.188L1264.46 1L1293.27 42.9922L1139.46 141.625Z" fill="currentColor"/>
@@ -83,13 +87,16 @@ export function SmartHeader() {
             </Link>
           </motion.div>
           
-          {/* Nav Right (CTA + Hamburger) */}
-          <div className="flex justify-end items-center gap-4 md:gap-8 relative z-[110]">
+          {/* Nav Right (Language + CTA + Hamburger) */}
+          <div className="flex justify-end items-center gap-4 md:gap-8 relative z-[110] translate-y-[2px]">
+            <div className="flex border-r border-[#222] pr-3 md:pr-8 mr-1 md:mr-2 h-full items-center translate-y-[3px]">
+              <LanguageToggle />
+            </div>
             <ContactTrigger className="!hidden md:!inline-flex">
-            <button type="button" className="rings-btn small">
+            <button type="button" className="rings-btn small" style={{ width: "235px", justifyContent: "center" }}>
               
               <i></i><i></i><i></i>
-              <span>SOLICITAR AUDITORÍA</span>
+              <span>{lang === "en" ? "REQUEST AUDIT" : "SOLICITAR AUDITORÍA"}</span>
               <svg className="arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
             
             </button>
@@ -138,6 +145,7 @@ export function SmartHeader() {
                     </div>
                   </Link>
               ))}
+              
             </div>
           </motion.div>
         )}
@@ -145,3 +153,7 @@ export function SmartHeader() {
     </>
   );
 }
+
+
+
+

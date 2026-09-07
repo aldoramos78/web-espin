@@ -1,0 +1,35 @@
+{
+  "nav": {
+    "agency": "AGENTS",
+    "methodology": "ECOSYSTEM",
+    "contact": "CONTACT"
+  },
+  "hero": {
+    "titleLine1": "TECHNOLOGICAL",
+    "titleLine2": "HAUTE",
+    "titleLine3": "COUTURE",
+    "desc1": "We audit and rebuild ",
+    "hl1": "obsolete",
+    "desc2": " infrastructures. We transform businesses losing money into ",
+    "hl2": "high-performance",
+    "desc3": " digital ecosystems.",
+    "cta": "Request Audit"
+  },
+  "services": [
+    {
+      "title": "High-Performance Web Development",
+      "desc": "Static systems lose money every second. We deploy ultra-fast, scalable web infrastructures and applications exclusively designed to dominate your market.",
+      "sysText": "[MODULE 01] // STATUS: ACTIVE // TECH REPORT: DEVELOPMENT"
+    },
+    {
+      "title": "AI Agents & Automation",
+      "desc": "Mechanical tasks devour your profit margin. We integrate AI into your workflows so your company operates, supports, and sells on autopilot 24/7.",
+      "sysText": "[MODULE 02] // STATUS: ACTIVE // TECH REPORT: AGENTS"
+    },
+    {
+      "title": "Visual Identity & Branding",
+      "desc": "Your company's appearance is your first filter. We design a solid, elegant, and disruptive identity that shields your authority.",
+      "sysText": "[MODULE 03] // STATUS: ACTIVE // TECH REPORT: BRANDING"
+    }
+  ]
+}
