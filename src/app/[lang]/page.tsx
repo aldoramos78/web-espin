@@ -6,6 +6,7 @@ import { HeaderAndModal } from "@/components/ui/HeaderAndModal";
 import { PreloaderManager } from "@/components/ui/PreloaderManager";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Counter } from "@/components/ui/Counter";
+import { SurgicalFAQ } from "@/components/ui/SurgicalFAQ";
 import { ContactTrigger } from "@/components/ui/ContactTrigger";
 import { getDictionary, Locale } from "@/dictionaries/dictionaries";
 
@@ -129,14 +130,14 @@ export default async function EspinLanding({ params }: { params: Promise<{ lang:
 
               {/* Text Content (w-7/12 on md, matching the 'Agentes' layout since we want text on the left) */}
               <div className="w-full md:w-7/12 flex flex-col relative z-20 items-start text-left">
-                <Link href={isEn ? "/en/ecosystem" : "/es/ecosistema"} className="group/link block cursor-pointer">
-                  <h3 className="font-clash font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-[5rem] xl:text-[5.5rem] leading-[1.1] uppercase mb-6 text-black transition-colors duration-500 group-hover/link:opacity-80">
-                    {isEn ? <>COMPLETE<br/>ECOSYSTEM</> : <>ECOSISTEMA<br/>COMPLETO</>}
-                  </h3>
-                  <p className="font-inter font-light text-lg md:text-2xl text-black leading-relaxed max-w-3xl group-hover/link:opacity-80 transition-opacity">
+                <Link href={isEn ? "/en/ecosystem" : "/es/ecosistema"} className="inline-block hover:scale-[1.02] transform origin-left transition-transform cursor-pointer">
+                    <h3 className="font-clash font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-[5rem] xl:text-[5.5rem] leading-[1.1] uppercase mb-6 text-black transition-colors duration-500 hover:opacity-80">
+                      {isEn ? <>COMPLETE<br/>ECOSYSTEM</> : <>ECOSISTEMA<br/>COMPLETO</>}
+                    </h3>
+                  </Link>
+                  <p className="font-inter font-light text-lg md:text-2xl text-black leading-relaxed max-w-3xl">
                     {isEn ? "Visual identity, web platform, and AI automation. You delegate the entire modernization of your company to a single team to lead your market from day one." : "Identidad visual, plataforma web y automatización con IA. Delegas toda la modernización de tu empresa en un solo equipo para liderar tu mercado desde el primer día."}
                   </p>
-                </Link>
                 <div className="mt-8 z-30 pointer-events-auto">
                   <ContactTrigger servicio="ecosistema" className="inline-block cursor-pointer">
                     <button type="button" className="rings-btn black group/btn">
@@ -279,6 +280,7 @@ export default async function EspinLanding({ params }: { params: Promise<{ lang:
             </ScrollReveal>
           </section>
 
+          <SurgicalFAQ isEn={isEn} />
         </main>
 
           {/* MARQUEE SEPARATOR */}

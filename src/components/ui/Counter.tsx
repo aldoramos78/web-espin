@@ -25,5 +25,5 @@ export function Counter({ from, to, duration = 1.5, decimals = 0 }: { from: numb
     }
   }, [from, to, duration, decimals, inView]);
 
-  return <span ref={nodeRef}>{from.toFixed(decimals)}</span>;
+  return <span ref={nodeRef}>{to.toFixed(decimals)}</span>;
 }

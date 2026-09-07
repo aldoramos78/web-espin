@@ -64,7 +64,7 @@ export default async function EcosistemaPage({ params }: { params: Promise<{ lan
 
             <ScrollReveal delay={0.15}>
               <div className="font-space-mono text-[#F5B700] text-[10px] md:text-xs tracking-[0.2em] mb-6 uppercase">
-                {isEn ? "[MODULE 04] // STATUS: ACTIVE // TECH REPORT: ECOSYSTEM" : "[MÓDULO 04] // ESTADO: ACTIVO // REPORTE TÉCNICO: {isEn ? "ECOSYSTEM" : "ECOSISTEMA"}"}
+                {isEn ? "[MODULE 04] // STATUS: ACTIVE // TECH REPORT: ECOSYSTEM" : "[MÓDULO 04] // ESTADO: ACTIVO // REPORTE TÉCNICO: ECOSISTEMA"}
               </div>
             </ScrollReveal>
 

@@ -4,7 +4,7 @@ import type { NextRequest } from 'next/server';
 const locales = ['es', 'en'];
 const defaultLocale = 'es';
 
-const routeMap = {
+const routeMap: { en: Record<string, string> } = {
   en: {
     '/development': '/desarrollo',
     '/agents': '/agentes',

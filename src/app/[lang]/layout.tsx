@@ -32,44 +32,56 @@ const inter = Inter({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: 'espín | Alta Costura Tecnológica',
-  description: 'Transformamos negocios que pierden dinero en ecosistemas digitales de alto rendimiento.',
-  metadataBase: new URL('https://www.espinlabs.com'),
-  openGraph: {
-    title: 'espín | Alta Costura Tecnológica',
-    description: 'Transformamos infraestructuras obsoletas...',
-    url: 'https://www.espinlabs.com',
-    siteName: 'espín',
-    images: [
-      {
-        url: '/og-espin.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'espín - Alta Costura Tecnológica',
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  const isEn = lang === 'en';
+
+  return {
+    title: isEn ? 'espín | Technological Haute Couture' : 'espín | Alta Costura Tecnológica',
+    description: isEn ? 'We transform businesses losing money into high-performance digital ecosystems.' : 'Transformamos negocios que pierden dinero en ecosistemas digitales de alto rendimiento.',
+    metadataBase: new URL('https://www.espinlabs.com'),
+    alternates: {
+      languages: {
+        'es': 'https://www.espinlabs.com/es',
+        'en': 'https://www.espinlabs.com/en',
+        'x-default': 'https://www.espinlabs.com/es',
       },
-    ],
-    locale: 'es_ES',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'espín | Alta Costura Tecnológica',
-    description: 'Transformamos infraestructuras obsoletas...',
-    images: ['/og-espin.jpg'],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
+    },
+    openGraph: {
+      title: isEn ? 'espín | Technological Haute Couture' : 'espín | Alta Costura Tecnológica',
+      description: isEn ? 'We transform obsolete infrastructures into high-performance ecosystems.' : 'Transformamos infraestructuras obsoletas en ecosistemas de alto rendimiento.',
+      url: 'https://www.espinlabs.com',
+      siteName: 'espín',
+      images: [
+        {
+          url: '/og-espin.jpg',
+          width: 1200,
+          height: 630,
+          alt: isEn ? 'espín - Technological Haute Couture' : 'espín - Alta Costura Tecnológica',
+        },
+      ],
+      locale: isEn ? 'en_US' : 'es_ES',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: isEn ? 'espín | Technological Haute Couture' : 'espín | Alta Costura Tecnológica',
+      description: isEn ? 'We transform obsolete infrastructures into high-performance ecosystems.' : 'Transformamos infraestructuras obsoletas en ecosistemas de alto rendimiento.',
+      images: ['/og-espin.jpg'],
+    },
+    robots: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
     },
-  },
-};
+  };
+}
 
 
 const jsonLd = {
@@ -96,7 +108,8 @@ const jsonLd = {
       "name": "Creación de Marca e Identidad Digital (Branding)"
     }
   ],
-  "areaServed": "ES",
+  "areaServed": ["ES", "US", "GB", "LatAm"],
+  "knowsAbout": ["B2B", "Logstica", "Despachos de Abogados", "Sector Inmobiliario", "E-commerce Premium", "Transformacin Digital"],
   "contactPoint": {
     "@type": "ContactPoint",
     "email": "contacto@espinlabs.com",
