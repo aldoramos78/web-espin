@@ -3,7 +3,7 @@ import React, { useState, useEffect, Suspense } from "react";
 import { motion } from "framer-motion";
 import { useSearchParams, useRouter } from "next/navigation";
 
-function AuditoriaForm() {
+function AuditoriaForm({ isEn }: { isEn: boolean }) {
   const easePremium: [number, number, number, number] = [0.22, 1, 0.36, 1];
   const [status, setStatus] = useState<"idle"|"loading"|"success"|"error">("idle");
   const [ecosistema, setEcosistema] = useState(false);
@@ -103,45 +103,45 @@ function AuditoriaForm() {
             <div className="mb-10 md:mb-14">
               <div className="flex justify-between items-start gap-4">
                 <h2 className="font-clash font-semibold text-2xl md:text-3xl uppercase text-white mb-4">
-                  Solicitud de Auditoría<span className="text-[#F5B700]">.</span>
+                  {isEn ? "Audit Request" : "Solicitud de Auditoría"}<span className="text-[#F5B700]">.</span>
                 </h2>
                 <button type="button" onClick={() => router.back()} className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-[#F5B700] md:border-zinc-700 flex items-center justify-center text-[#F5B700] md:text-zinc-400 hover:text-[#F5B700] md:hover:text-white hover:border-[#F5B700] md:hover:border-[#F5B700] transition-colors group flex-shrink-0 mt-1" aria-label="Volver">
                   <svg viewBox="0 0 24 24" className="w-4 h-4 md:w-5 md:h-5 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
                 </button>
               </div>
               <p className="font-inter text-zinc-500 text-xs md:text-sm tracking-wide leading-relaxed max-w-lg italic">
-                <span className="text-zinc-400">espín</span> desarrolla infraestructuras a medida. Complete los datos para que la Dirección Estratégica inicie su diagnóstico.
+                <span className="text-zinc-400">espín</span> {isEn ? "develops custom infrastructures. Complete the data below so our Strategic Direction can begin the diagnostic." : "desarrolla infraestructuras a medida. Complete los datos para que la Dirección Estratégica inicie su diagnóstico."}
               </p>
             </div>
             
             <form onSubmit={handleSubmit} className="flex flex-col gap-8 md:gap-10 font-inter">
               {/* HONEYPOT ANTI-SPAM (invisible para humanos, un bot lo rellenará al leer el DOM) */}
                 <div className="absolute opacity-0 -z-50 w-0 h-0 overflow-hidden" aria-hidden="true">
-                  <label htmlFor="contacto_directo">Deje este campo en blanco si es humano</label>
+                  <label htmlFor="contacto_directo">{isEn ? "Leave this field empty if you are human" : "Deje este campo en blanco si es humano"}</label>
                   <input type="text" id="contacto_directo" name="contacto_directo" tabIndex={-1} autoComplete="off" />
                 </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
-                <input required type="text" name="nombre" placeholder="Nombre completo" className="w-full bg-transparent border-b border-zinc-700 py-3 text-white text-sm md:text-base outline-none focus:border-[#F5B700] caret-[#F5B700] transition-colors placeholder:text-zinc-400 rounded-none" />
-                <input required type="text" name="empresa" placeholder="Empresa / Proyecto" className="w-full bg-transparent border-b border-zinc-700 py-3 text-white text-sm md:text-base outline-none focus:border-[#F5B700] caret-[#F5B700] transition-colors placeholder:text-zinc-400 rounded-none" />
+                <input required type="text" name="nombre" placeholder={isEn ? "Full name" : "Nombre completo"} className="w-full bg-transparent border-b border-zinc-700 py-3 text-white text-sm md:text-base outline-none focus:border-[#F5B700] caret-[#F5B700] transition-colors placeholder:text-zinc-400 rounded-none" />
+                <input required type="text" name="empresa" placeholder={isEn ? "Company / Project" : "Empresa / Proyecto"} className="w-full bg-transparent border-b border-zinc-700 py-3 text-white text-sm md:text-base outline-none focus:border-[#F5B700] caret-[#F5B700] transition-colors placeholder:text-zinc-400 rounded-none" />
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-10">
-                <input required type="email" name="email" placeholder="Email profesional" className="md:col-span-3 w-full bg-transparent border-b border-zinc-700 py-3 text-white text-sm md:text-base outline-none focus:border-[#F5B700] caret-[#F5B700] transition-colors placeholder:text-zinc-400 rounded-none" />
-                <input required type="tel" name="telefono" placeholder="Teléfono" className="md:col-span-1 w-full bg-transparent border-b border-zinc-700 py-3 text-white text-sm md:text-base outline-none focus:border-[#F5B700] caret-[#F5B700] transition-colors placeholder:text-zinc-400 rounded-none" />
+                <input required type="email" name="email" placeholder={isEn ? "Professional email" : "Email profesional"} className="md:col-span-3 w-full bg-transparent border-b border-zinc-700 py-3 text-white text-sm md:text-base outline-none focus:border-[#F5B700] caret-[#F5B700] transition-colors placeholder:text-zinc-400 rounded-none" />
+                <input required type="tel" name="telefono" placeholder={isEn ? "Phone number" : "Teléfono"} className="md:col-span-1 w-full bg-transparent border-b border-zinc-700 py-3 text-white text-sm md:text-base outline-none focus:border-[#F5B700] caret-[#F5B700] transition-colors placeholder:text-zinc-400 rounded-none" />
               </div>
 
-              <input required type="text" name="url" placeholder="URL de la empresa (Ej: midominio.com)" className="w-full bg-transparent border-b border-zinc-700 py-3 text-white text-sm md:text-base outline-none focus:border-[#F5B700] caret-[#F5B700] transition-colors placeholder:text-zinc-400 rounded-none" />
+              <input required type="text" name="url" placeholder={isEn ? "Company URL (e.g. mydomain.com)" : "URL de la empresa (Ej: midominio.com)"} className="w-full bg-transparent border-b border-zinc-700 py-3 text-white text-sm md:text-base outline-none focus:border-[#F5B700] caret-[#F5B700] transition-colors placeholder:text-zinc-400 rounded-none" />
 
               <div className="flex flex-col gap-4">
-                <span className="text-zinc-400 text-sm md:text-base">Servicios requeridos:</span>
+                <span className="text-zinc-400 text-sm md:text-base">{isEn ? "Required services:" : "Servicios requeridos:"}</span>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <label className={`flex items-center gap-3 cursor-pointer group ${ecosistema ? 'opacity-30 pointer-events-none' : ''} transition-opacity duration-300`}>
                     <div className="relative flex items-center justify-center">
                       <input type="checkbox" name="servicio_web" checked={serviciosSeleccionados.web} onChange={(e) => setServiciosSeleccionados({ ...serviciosSeleccionados, web: e.target.checked })} className="peer appearance-none w-5 h-5 border border-zinc-700 bg-transparent checked:bg-[#F5B700] checked:border-[#F5B700] transition-colors cursor-pointer" />
                       <span className="absolute text-black opacity-0 peer-checked:opacity-100 pointer-events-none text-xs">✓</span>
                     </div>
-                    <span className="text-zinc-300 text-sm group-hover:text-white transition-colors">Desarrollo Web</span>
+                    <span className="text-zinc-300 text-sm group-hover:text-white transition-colors">{isEn ? "Web Development" : "Desarrollo Web"}</span>
                   </label>
 
                   <label className={`flex items-center gap-3 cursor-pointer group ${ecosistema ? 'opacity-30 pointer-events-none' : ''} transition-opacity duration-300`}>
@@ -149,7 +149,7 @@ function AuditoriaForm() {
                       <input type="checkbox" name="servicio_agentes" checked={serviciosSeleccionados.agentes} onChange={(e) => setServiciosSeleccionados({ ...serviciosSeleccionados, agentes: e.target.checked })} className="peer appearance-none w-5 h-5 border border-zinc-700 bg-transparent checked:bg-[#F5B700] checked:border-[#F5B700] transition-colors cursor-pointer" />
                       <span className="absolute text-black opacity-0 peer-checked:opacity-100 pointer-events-none text-xs">✓</span>
                     </div>
-                    <span className="text-zinc-300 text-sm group-hover:text-white transition-colors">Agentes de IA</span>
+                    <span className="text-zinc-300 text-sm group-hover:text-white transition-colors">{isEn ? "AI Agents" : "Agentes de IA"}</span>
                   </label>
 
                   <label className={`flex items-center gap-3 cursor-pointer group ${ecosistema ? 'opacity-30 pointer-events-none' : ''} transition-opacity duration-300`}>
@@ -157,7 +157,7 @@ function AuditoriaForm() {
                       <input type="checkbox" name="servicio_marca" checked={serviciosSeleccionados.marca} onChange={(e) => setServiciosSeleccionados({ ...serviciosSeleccionados, marca: e.target.checked })} className="peer appearance-none w-5 h-5 border border-zinc-700 bg-transparent checked:bg-[#F5B700] checked:border-[#F5B700] transition-colors cursor-pointer" />
                       <span className="absolute text-black opacity-0 peer-checked:opacity-100 pointer-events-none text-xs">✓</span>
                     </div>
-                    <span className="text-zinc-300 text-sm group-hover:text-white transition-colors">Imagen y Marca</span>
+                    <span className="text-zinc-300 text-sm group-hover:text-white transition-colors">{isEn ? "Brand & Identity" : "Imagen y Marca"}</span>
                   </label>
 
                   <label className="flex items-center gap-3 cursor-pointer group transition-opacity duration-300">
@@ -165,17 +165,17 @@ function AuditoriaForm() {
                       <input type="checkbox" name="servicio_ecosistema" checked={ecosistema} onChange={handleEcosistemaChange} className="peer appearance-none w-5 h-5 border border-zinc-700 bg-transparent checked:bg-[#F5B700] checked:border-[#F5B700] transition-colors cursor-pointer" />
                       <span className="absolute text-black opacity-0 peer-checked:opacity-100 pointer-events-none text-xs">✓</span>
                     </div>
-                    <span className="text-white font-semibold text-sm group-hover:text-[#F5B700] transition-colors">Ecosistema Completo</span>
+                    <span className="text-white font-semibold text-sm group-hover:text-[#F5B700] transition-colors">{isEn ? "Complete Ecosystem" : "Ecosistema Completo"}</span>
                   </label>
                 </div>
               </div>
 
-              <textarea required rows={3} name="problema" placeholder="Describa brevemente la fricción o problema que han detectado en su negocio" className="w-full bg-transparent border-b border-zinc-700 py-3 text-white text-sm md:text-base outline-none focus:border-[#F5B700] caret-[#F5B700] transition-colors placeholder:text-zinc-400 resize-none rounded-none"></textarea>
+              <textarea required rows={3} name="problema" placeholder={isEn ? "Briefly describe the friction or problem you have detected in your business" : "Describa brevemente la fricción o problema que han detectado en su negocio"} className="w-full bg-transparent border-b border-zinc-700 py-3 text-white text-sm md:text-base outline-none focus:border-[#F5B700] caret-[#F5B700] transition-colors placeholder:text-zinc-400 resize-none rounded-none"></textarea>
 
               <div className="flex justify-center w-full md:mt-4">
                 <button type="submit" disabled={status === "loading"} className="rings-btn !border-[#F5B700] md:!border-[rgba(242,239,233,0.16)] !px-6 !py-3 md:!px-8 md:!py-4 flex items-center justify-center">
                   <i></i><i></i><i></i>
-                  <span className="text-xs md:text-sm font-bold tracking-widest uppercase relative -top-[1px]">{status === "loading" ? "PROCESANDO..." : status === "error" ? "ERROR - REINTENTAR" : "ENVIAR"}</span>
+                  <span className="text-xs md:text-sm font-bold tracking-widest uppercase relative -top-[1px]">{status === "loading" ? (isEn ? "PROCESSING..." : "PROCESANDO...") : status === "error" ? (isEn ? "ERROR - RETRY" : "ERROR - REINTENTAR") : (isEn ? "SUBMIT" : "ENVIAR")}</span>
                   <svg className="arr relative -top-[1px]" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
                 </button>
               </div>
@@ -187,10 +187,11 @@ function AuditoriaForm() {
   );
 }
 
-export default function AuditoriaPage() {
+export default function AuditoriaPage({ params }: { params: { lang: string } }) {
   return (
     <Suspense fallback={<div className="min-h-screen bg-black" />}>
-      <AuditoriaForm />
+      <AuditoriaForm isEn={params.lang === "en"} />
     </Suspense>
   );
 }
+
